@@ -1,11 +1,30 @@
 <resources>
-    <string name="app_name">iNoBugs2</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">病虫随手记</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="page_home">主 页</string>
     <string name="page_all_records">所有记录</string>
 
+    <!-- Action bar menu items -->
+    <string name="action_about">关于</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- About activity-->
+    <string name="about_version">2.0</string>
+    <string name="about_build">20170217</string>
+    <string name="about_author">代码/UI: Ryan</string>
+    <string name="about_special_thanks">特别鸣谢: Louz</string>
+    <string name="about_copyright">© 2017 laterain.io</string>
+
+    <!-- About alert dialog fragment -->
+    <string name="dialog_about_title">I Didn\'t Change This</string>
+    <string name="dialog_about_message">Did you like somebody in 2014 when you were building this app at the first time?</string>
+    <string name="dialog_about_button_1_text">Yes</string>
+    <string name="dialog_about_button_2_text">Yup</string>
+    <string name="dialog_about_button_3_text">Of course</string>
+    <string name="dialog_about_button_1_toast_message">Too lazy to translate. ; )</string>
+    <string name="dialog_about_button_2_toast_message">Too lazy to translate. : P</string>
+    <string name="dialog_about_button_3_toast_message">Too lazy to translate. : D</string>
 </resources>

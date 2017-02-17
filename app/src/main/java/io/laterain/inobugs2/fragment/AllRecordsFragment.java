@@ -1,4 +1,4 @@
-package io.laterain.inobugs2.fragments;
+package io.laterain.inobugs2.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import io.laterain.inobugs2.adapters.MyAllRecordsRecyclerViewAdapter;
+import io.laterain.inobugs2.adapter.AllRecordsRecyclerViewAdapter;
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dummy.DummyContent;
 import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
@@ -69,7 +69,7 @@ public class AllRecordsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyAllRecordsRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new AllRecordsRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }

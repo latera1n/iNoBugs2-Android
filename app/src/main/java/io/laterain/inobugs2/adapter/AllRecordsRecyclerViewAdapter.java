@@ -1,4 +1,4 @@
-package io.laterain.inobugs2.adapters;
+package io.laterain.inobugs2.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import io.laterain.inobugs2.R;
-import io.laterain.inobugs2.fragments.AllRecordsFragment.OnListFragmentInteractionListener;
+import io.laterain.inobugs2.fragment.AllRecordsFragment.OnListFragmentInteractionListener;
 import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
 
 import java.util.List;
@@ -17,25 +17,25 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyAllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<MyAllRecordsRecyclerViewAdapter.ViewHolder> {
+public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecordsRecyclerViewAdapter.RecordViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyAllRecordsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public AllRecordsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecordViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_all_records, parent, false);
-        return new ViewHolder(view);
+        return new RecordViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final RecordViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mContentView.setText(mValues.get(position).content);
@@ -57,13 +57,13 @@ public class MyAllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<MyAllR
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class RecordViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
         public DummyItem mItem;
 
-        public ViewHolder(View view) {
+        public RecordViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.id);

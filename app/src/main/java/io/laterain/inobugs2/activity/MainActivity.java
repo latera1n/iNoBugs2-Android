@@ -1,7 +1,6 @@
-package io.laterain.inobugs2.activities;
+package io.laterain.inobugs2.activity;
 
-import android.net.Uri;
-import android.support.design.widget.Snackbar;
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,8 +16,8 @@ import android.widget.Toast;
 
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dummy.DummyContent;
-import io.laterain.inobugs2.fragments.AllRecordsFragment;
-import io.laterain.inobugs2.fragments.MainFragment;
+import io.laterain.inobugs2.fragment.AllRecordsFragment;
+import io.laterain.inobugs2.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity implements AllRecordsFragment.OnListFragmentInteractionListener{
 
@@ -56,16 +55,6 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-
     }
 
 
@@ -84,8 +73,9 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_about) {
+            Intent intent = new Intent(getBaseContext(), AboutActivity.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
