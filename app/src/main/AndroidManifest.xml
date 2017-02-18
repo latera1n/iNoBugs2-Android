@@ -33,7 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.AboutActivity"></activity>
+        <activity android:name=".activity.AboutActivity" />
+        <activity android:name=".activity.AddRecordActivity" />
+        <activity android:name=".activity.AreaAndCountActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="crop_categories">
+        <item>水稻</item>
+        <item>小麦</item>
+        <item>玉米</item>
+        <item>大豆</item>
+    </string-array>
+    <string-array name="crop_categories_numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="harm_categories">
+        <item>病害</item>
+        <item>虫害</item>
+    </string-array>
+    <string-array name="harm_categories_numbers">
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="method_categories">
+        <item>面积统计</item>
+        <item>株数统计</item>
+        <item>面积和株数统计</item>
+    </string-array>
+    <string-array name="method_categories_numbers">
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+    <string-array name="unit_categories">
+        <item>平方米</item>
+        <item>亩</item>
+        <item>公顷</item>
+        <item>平方千米</item>
+    </string-array>
+    <string-array name="unit_categories_numbers">
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </string-array>
+</resources>

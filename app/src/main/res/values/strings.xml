@@ -11,6 +11,19 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Add record activity -->
+    <string name="add_record_crop_label">农作物</string>
+    <string name="add_record_harm_label">受害类型</string>
+    <string name="add_record_mode_label">统计模式</string>
+    <string name="add_record_method_label">统计方法</string>
+    <string name="add_record_time_label">日期</string>
+    <string name="add_record_location_label">地点</string>
+    <string name="add_record_note_label">备注</string>
+
+    <string name="add_record_time_hint">YYYY-M-D</string>
+    <string name="add_record_location_hint">请输入地点</string>
+    <string name="add_record_note_hint">请输入备注 (可选)</string>
+
     <!-- About activity-->
     <string name="about_version">2.0</string>
     <string name="about_build">20170217</string>
@@ -27,4 +40,9 @@
     <string name="dialog_about_button_1_toast_message">Too lazy to translate. ; )</string>
     <string name="dialog_about_button_2_toast_message">Too lazy to translate. : P</string>
     <string name="dialog_about_button_3_toast_message">Too lazy to translate. : D</string>
+
+    <!-- Toast messages -->
+    <string name="toast_message_invalid_date">日期格式有误</string>
+    <string name="toast_message_incomplete_input">信息填写不完整</string>
+    <string name="title_activity_area_and_count">AreaAndCountActivity</string>
 </resources>

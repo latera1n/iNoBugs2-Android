@@ -39,4 +39,6 @@ public class AboutAlertDialogFragment extends AppCompatDialogFragment {
                     }
                 }).create();
     }
+
+    
 }

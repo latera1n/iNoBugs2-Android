@@ -5,7 +5,7 @@ android {
     buildToolsVersion "22.0.1"
     defaultConfig {
         applicationId "io.laterain.inobugs2"
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

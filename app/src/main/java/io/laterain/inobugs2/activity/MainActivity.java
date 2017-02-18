@@ -74,8 +74,7 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
-            Intent intent = new Intent(getBaseContext(), AboutActivity.class);
-            startActivity(intent);
+            startActivity(new Intent(getBaseContext(), AboutActivity.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -102,9 +101,9 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
             // Return a PlaceholderFragment (defined as a static inner class below).
             switch (position) {
                 case 0:
-                    return new MainFragment();
+                    return MainFragment.newInstance();
                 case 1:
-                    return new AllRecordsFragment();
+                    return AllRecordsFragment.newInstance(1);
                 default:
                     return null;
             }
