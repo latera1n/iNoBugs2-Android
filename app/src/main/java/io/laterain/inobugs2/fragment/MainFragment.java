@@ -3,7 +3,6 @@ package io.laterain.inobugs2.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,7 @@ import io.laterain.inobugs2.activity.AddRecordActivity;
 
 /**
  * A simple {@link Fragment} subclass.
- *
+ * <p>
  * Use the {@link MainFragment#newInstance} factory method to
  * create an instance of this fragment.
  */

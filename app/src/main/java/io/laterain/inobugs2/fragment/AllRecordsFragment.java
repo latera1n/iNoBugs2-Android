@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import io.laterain.inobugs2.adapter.AllRecordsRecyclerViewAdapter;
 import io.laterain.inobugs2.R;
+import io.laterain.inobugs2.adapter.AllRecordsRecyclerViewAdapter;
 import io.laterain.inobugs2.dummy.DummyContent;
 import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
 

@@ -1,23 +1,17 @@
 package io.laterain.inobugs2.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Timestamp;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
@@ -27,7 +21,7 @@ import io.laterain.inobugs2.util.XMLStringArrayHelper;
 
 public class AddRecordActivity extends AppCompatActivity {
 
-    public final static String STR_EXTRA_KEY = "record";
+    public final static String STR_EXTRA_KEY = "mRecord";
 
     Spinner mSpinnerCrop;
     Spinner mSpinnerMethod;

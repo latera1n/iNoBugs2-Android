@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import io.laterain.inobugs2.R;
-import io.laterain.inobugs2.fragment.AllRecordsFragment.OnListFragmentInteractionListener;
-import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
-
 import java.util.List;
+
+import io.laterain.inobugs2.R;
+import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
+import io.laterain.inobugs2.fragment.AllRecordsFragment.OnListFragmentInteractionListener;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the

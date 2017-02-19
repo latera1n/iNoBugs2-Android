@@ -1,15 +1,14 @@
 package io.laterain.inobugs2.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,7 +18,7 @@ import io.laterain.inobugs2.dummy.DummyContent;
 import io.laterain.inobugs2.fragment.AllRecordsFragment;
 import io.laterain.inobugs2.fragment.MainFragment;
 
-public class MainActivity extends AppCompatActivity implements AllRecordsFragment.OnListFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements AllRecordsFragment.OnListFragmentInteractionListener {
 
     private final static int NUM_PAGES = 2;
 

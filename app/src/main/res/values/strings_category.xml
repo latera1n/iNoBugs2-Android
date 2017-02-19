@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="crop_categories">
+        <item>水稻</item>
+        <item>小麦</item>
+        <item>玉米</item>
+        <item>大豆</item>
+    </string-array>
+    <string-array name="harm_categories">
+        <item>病害</item>
+        <item>虫害</item>
+    </string-array>
+    <string-array name="mode_categories">
+        <item>普通模式</item>
+        <item>专家模式</item>
+    </string-array>
+    <string-array name="method_categories">
+        <item>面积统计</item>
+        <item>株数统计</item>
+        <item>面积和株数统计</item>
+    </string-array>
+</resources>

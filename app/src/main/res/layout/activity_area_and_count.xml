@@ -1,20 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_area_and_count"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="io.laterain.inobugs2.activity.AreaAndCountActivity">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-    <android.support.design.widget.FloatingActionButton
+    <TextView
+        android:id="@+id/text_view_area_and_count_total_area_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="mini"
-        app:srcCompat="@mipmap/ic_keyboard_arrow_right_white_24dp"
-        android:id="@+id/floatingActionButton"
+        android:layout_alignBaseline="@+id/edit_text_area_and_count_total_area"
+        android:layout_alignEnd="@+id/text_view_area_and_count_affected_area_label"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/text_view_area_and_count_affected_area_label"
+        android:gravity="end"
+        android:text="@string/area_and_count_total_area_label"
+        android:textAppearance="@android:style/TextAppearance.Material"/>
+
+    <EditText
+        android:id="@+id/edit_text_area_and_count_total_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/text_view_area_and_count_affected_area_label"
+        android:ems="6"
+        android:hint="@string/area_and_count_area_hint"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/area_and_count_edit_text_default_text"
+        android:textAppearance="@android:style/TextAppearance.Material.Inverse">
+
+        <requestFocus/>
+    </EditText>
+
+    <Spinner
+        android:id="@+id/spinner_area_and_count_total_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edit_text_area_and_count_total_area"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/edit_text_area_and_count_total_area"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/edit_text_area_and_count_total_area"/>
+
+    <TextView
+        android:id="@+id/text_view_area_and_count_affected_area_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_text_area_and_count_affected_area"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:gravity="end"
+        android:text="@string/area_and_count_affected_area_label"
+        android:textAppearance="@android:style/TextAppearance.Material"/>
+
+    <EditText
+        android:id="@+id/edit_text_area_and_count_affected_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_text_area_and_count_total_area"
+        android:layout_below="@+id/edit_text_area_and_count_total_area"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/text_view_area_and_count_affected_area_label"
+        android:ems="8"
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:text="@string/area_and_count_edit_text_default_text"
+        android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+        android:hint="@string/area_and_count_area_hint"/>
+
+    <Spinner
+        android:id="@+id/spinner_area_and_count_affected_area"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/edit_text_area_and_count_affected_area"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/spinner_area_and_count_total_area"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/edit_text_area_and_count_affected_area"/>
+
+    <TextView
+        android:id="@+id/text_view_area_and_count_total_crop_count_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_text_area_and_count_total_crop_count"
+        android:layout_alignEnd="@+id/text_view_area_and_count_affected_crop_count_label"
+        android:layout_alignStart="@+id/text_view_area_and_count_affected_crop_count_label"
+        android:layout_toStartOf="@+id/edit_text_area_and_count_total_crop_count"
+        android:gravity="right"
+        android:text="@string/area_and_count_total_crop_number_label"
+        android:textAppearance="@android:style/TextAppearance.Material"/>
+
+    <EditText
+        android:id="@+id/edit_text_area_and_count_total_crop_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/edit_text_area_and_count_affected_area"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/text_view_area_and_count_affected_crop_count_label"
+        android:ems="10"
+        android:hint="@string/area_and_count_crop_count_hint"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:text="@string/area_and_count_edit_text_default_text"
+        android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+    <TextView
+        android:id="@+id/text_view_area_and_count_affected_crop_count_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_text_area_and_count_affected_crop_count"
+        android:layout_alignBottom="@+id/edit_text_area_and_count_affected_crop_count"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_toStartOf="@+id/edit_text_area_and_count_affected_area"
+        android:gravity="end"
+        android:text="@string/area_and_count_affected_crop_number_label"
+        android:textAppearance="@android:style/TextAppearance.Material"/>
+
+    <EditText
+        android:id="@+id/edit_text_area_and_count_affected_crop_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/edit_text_area_and_count_total_crop_count"
+        android:layout_below="@+id/edit_text_area_and_count_total_crop_count"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/text_view_area_and_count_affected_crop_count_label"
+        android:ems="10"
+        android:hint="@string/area_and_count_crop_count_hint"
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:text="@string/area_and_count_edit_text_default_text"
+        android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_action_button_area_and_count_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/fab_margin"/>
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@mipmap/ic_keyboard_arrow_right_white_24dp"/>
+
 </RelativeLayout>

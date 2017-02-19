@@ -8,9 +8,6 @@
     <!-- Action bar menu items -->
     <string name="action_about">关于</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!-- Add record activity -->
     <string name="add_record_crop_label">农作物</string>
     <string name="add_record_harm_label">受害类型</string>
@@ -23,6 +20,17 @@
     <string name="add_record_time_hint">YYYY-M-D</string>
     <string name="add_record_location_hint">请输入地点</string>
     <string name="add_record_note_hint">请输入备注 (可选)</string>
+
+    <!-- Area and crop activity -->
+    <string name="area_and_count_total_area_label">总面积</string>
+    <string name="area_and_count_affected_area_label">受害面积</string>
+    <string name="area_and_count_total_crop_number_label">总株数</string>
+    <string name="area_and_count_affected_crop_number_label">受害株数</string>
+
+    <string name="area_and_count_area_hint">请输入面积</string>
+    <string name="area_and_count_crop_count_hint">请输入株数</string>
+
+    <string name="area_and_count_edit_text_default_text">0</string>
 
     <!-- About activity-->
     <string name="about_version">2.0</string>
@@ -44,5 +52,11 @@
     <!-- Toast messages -->
     <string name="toast_message_invalid_date">日期格式有误</string>
     <string name="toast_message_incomplete_input">信息填写不完整</string>
-    <string name="title_activity_area_and_count">AreaAndCountActivity</string>
+    <string name="toast_message_invalid_area_invalid_format">面积格式有误</string>
+    <string name="toast_message_invalid_area_greater_than_zero">面积应不能小于 1</string>
+    <string name="toast_message_invalid_area_total_greater_than_affected">总面积不能小于受害面积</string>
+    <string name="toast_message_invalid_crop_count_invalid_format">株数格式有误</string>
+    <string name="toast_message_invalid_crop_count_greater_than_zero">株数不能小于 1</string>
+    <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数</string>
+
 </resources>

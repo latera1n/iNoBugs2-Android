@@ -32,6 +32,7 @@ public class SpinnerItem {
 
     /**
      * Ovrride toString() method for callers to get the display values.
+     *
      * @return the display value of this spinner item
      */
     @Override

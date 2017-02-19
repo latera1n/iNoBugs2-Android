@@ -14,6 +14,7 @@ import io.laterain.inobugs2.R;
  */
 
 public class AboutAlertDialogFragment extends AppCompatDialogFragment {
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         setCancelable(false);
@@ -40,5 +41,4 @@ public class AboutAlertDialogFragment extends AppCompatDialogFragment {
                 }).create();
     }
 
-    
 }

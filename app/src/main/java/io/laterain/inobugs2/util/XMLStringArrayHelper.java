@@ -5,7 +5,6 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.SpinnerItem;
 
 /**
