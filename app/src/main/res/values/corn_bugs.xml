@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="corn_bug_names">
+    <string-array name="_2_corn_bug_names">
    		<item>玉米螟</item>
    		<item>大螟</item>
    		<item>蝼蛄</item>
@@ -17,7 +17,7 @@
    		<item>甜菜夜蛾</item>
    		<item>耕葵粉蚧</item>
    	</string-array>
-    <string-array name="corn_bug_keys">
+    <string-array name="_2_corn_bug_keys">
         <item>300</item>
    		<item>301</item>
    		<item>302</item>

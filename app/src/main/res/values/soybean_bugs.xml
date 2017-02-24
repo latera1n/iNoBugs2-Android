@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="soybean_bug_names">
+    <string-array name="_3_soybean_bug_names">
         <item>苜蓿盲蝽</item>
         <item>三点盲蝽</item>
         <item>点峰缘蝽</item>
@@ -27,7 +27,7 @@
         <item>焰叶蛾</item>
         <item>豆灰蝶</item>
     </string-array>
-    <string-array name="soybean_bug_keys">
+    <string-array name="_3_soybean_bug_keys">
         <item>400</item>
         <item>401</item>
         <item>402</item>

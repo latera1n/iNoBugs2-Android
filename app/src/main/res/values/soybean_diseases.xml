@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="soybean_parts_names">
+    <string-array name="_3_soybean_parts_names">
         <item>植株</item>
         <item>根</item>
         <item>子叶</item>
@@ -9,21 +9,21 @@
         <item>豆荚</item>
         <item>豆粒</item>
     </string-array>
-    <string-array name="soybean_disease_names">
+    <string-array name="_3_soybean_disease_names">
         <item>大豆白腐病（菌核病）</item>
         <item>大豆根腐病</item>
         <item>大豆灰斑病</item>
         <item>大豆病毒病</item>
         <item>大豆炭疽病</item>
     </string-array>
-    <string-array name="soybean_disease_names_keys">
+    <string-array name="_3_soybean_disease_names_keys">
         <item>0000</item>
         <item>1000</item>
         <item>2000</item>
         <item>3000</item>
         <item>4000</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_0">
+    <string-array name="_3_soybean_disease_descriptions_0">
         <item>无明显症状。</item>
         <item>病株枯死后呈灰白色。</item>
         <item>造成病苗出土很慢，病株发黄变矮，甚至枯萎死亡。</item>
@@ -31,35 +31,35 @@
    		    天旱时病情扩展缓慢，低温多雨时，病苗易枯死。</item>
         <item>植株生长明显矮化。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_0_keys">
+    <string-array name="_3_soybean_disease_descriptions_0_keys">
         <item>0000</item>
         <item>0010</item>
         <item>1010</item>
         <item>2030</item>
         <item>3010</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_1">
+    <string-array name="_3_soybean_disease_descriptions_1">
         <item>无明显症状。</item>
    		<item>根产生椭圆形褐色长条形至不规则形凹陷斑，后扩展成环绕主根的大斑块，有的为害侧根。侧根、须根少、
    		    后期根部变黑，表皮腐烂。受害株根系不发达，根瘤少。</item>
         <item>根瘤显著减少。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_1_keys">
+    <string-array name="_3_soybean_disease_descriptions_1_keys">
         <item>0100</item>
         <item>1160</item>
         <item>3110</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_2">
+    <string-array name="_3_soybean_disease_descriptions_2">
         <item>无明显症状。</item>
         <item>子叶褪绿，提前脱落。</item>
         <item>子叶上现半圆形深褐色凹陷斑。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_2_keys">
+    <string-array name="_3_soybean_disease_descriptions_2_keys">
         <item>0200</item>
         <item>1210</item>
         <item>2210</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_3">
+    <string-array name="_3_soybean_disease_descriptions_3">
         <item>无明显症状。</item>
    		<item>叶片染病初现褪绿小圆斑，后逐渐形成中间灰色至灰褐色，四周褐色的蛙眼斑，大小2－5mm，有的病斑呈椭圆或不规则形，
    		    湿度大时，叶背面病斑中间生出密集的灰色霉层，发病重的病斑布满整个叶片，融合或致病叶干枯。</item>
@@ -67,25 +67,25 @@
    		    叶缘下卷。接近成熟时叶变成革质，粗糙而脆。</item>
         <item>叶片上生出病斑，成不规则形，边缘深褐色，内部浅褐色，病斑上生粗糙刺毛状黑点，为病菌的分生孢子盘。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_3_keys">
+    <string-array name="_3_soybean_disease_descriptions_3_keys">
         <item>0300</item>
         <item>2330</item>
         <item>3360</item>
         <item>4340</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_4">
+    <string-array name="_3_soybean_disease_descriptions_4">
         <item>无明显症状。</item>
         <item>茎部发生褐色病斑，上生白色棉絮装菌丝体及白色颗粒状物。茎中空皮层成麻丝壮。</item>
         <item>茎部染病产生椭圆形病斑，中央褐色，边缘红褐色，密布微细黑点。</item>
         <item>茎部初生红褐色病斑，渐变褐色，最后变灰色，不规则形，上生浓密刺毛状黑点，常包围整个茎。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_4_keys">
+    <string-array name="_3_soybean_disease_descriptions_4_keys">
         <item>0400</item>
         <item>0480</item>
         <item>2410</item>
         <item>4430</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_5">
+    <string-array name="_3_soybean_disease_descriptions_5">
         <item>无明显症状。</item>
         <item>豆荚染病现水浸状不规则病斑，荚内、外均可形成较茎内菌核稍小的菌核，多不能结实。</item>
         <item>病株结荚少。</item>
@@ -93,7 +93,7 @@
         <item>结荚数减少，荚细小，豆荚呈扁平、弯曲等畸形症状。</item>
         <item>荚上病斑呈圆形或不规则形，黑色分生孢子盘有时呈轮纹状排列，病荚不能正常发育，种子发霉，暗褐色并皱缩或不能结实。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_5_keys">
+    <string-array name="_3_soybean_disease_descriptions_5_keys">
         <item>0500</item>
         <item>0510</item>
         <item>1510</item>
@@ -101,13 +101,13 @@
         <item>3510</item>
         <item>4530</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_6">
+    <string-array name="_3_soybean_disease_descriptions_6">
         <item>无明显症状。</item>
         <item>豆粒少而秕瘦。</item>
         <item>豆粒上病斑圆形或不规则形，边缘暗褐色，中央灰白，病斑上霉层不明显。</item>
         <item>豆粒明显减小，并可引起豆粒出现浅褐色斑纹。</item>
     </string-array>
-    <string-array name="soybean_disease_descriptions_6_keys">
+    <string-array name="_3_soybean_disease_descriptions_6_keys">
         <item>0600</item>
         <item>1610</item>
         <item>2610</item>

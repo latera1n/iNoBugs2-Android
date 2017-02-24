@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="wheat_bug_names">
+    <string-array name="_1_wheat_bug_names">
         <item>麦长管蚜</item>
         <item>麦二叉蚜</item>
         <item>麦禾缢管蚜</item>
@@ -19,7 +19,7 @@
         <item>麦圆蜘蛛</item>
         <item>麦长腿蜘蛛</item>
     </string-array>
-    <string-array name="wheat_bug_keys">
+    <string-array name="_1_wheat_bug_keys">
         <item>200</item>
         <item>201</item>
         <item>202</item>

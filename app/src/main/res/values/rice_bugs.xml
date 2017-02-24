@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="rice_bug_names">
+    <string-array name="_0_rice_bug_names">
         <item>二化螟</item>
         <item>三化螟</item>
         <item>大螟</item>
@@ -22,7 +22,7 @@
         <item>稻瘿蚊</item>
         <item>稻蓟马</item>
     </string-array>
-    <string-array name="rice_bug_keys">
+    <string-array name="_0_rice_bug_keys">
         <item>100</item>
         <item>101</item>
         <item>102</item>
