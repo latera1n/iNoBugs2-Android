@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wheat_parts">
+        <item>植株</item>
+        <item>根</item>
+        <item>叶鞘</item>
+        <item>叶片</item>
+        <item>麦杆</item>
+        <item>麦穗</item>
+        <item>颖壳</item>
+        <item>麦粒</item>
+    </string-array>
+    <string-array name="wheat_disease_names">
+        <item>小麦条锈病</item>
+        <item>小麦叶锈病</item>
+        <item>小麦白粉病</item>
+        <item>小麦赤霉病</item>
+        <item>小麦根腐（叶枯）病</item>
+        <item>小麦黑穗病</item>
+        <item>小麦全蚀病</item>
+        <item>小麦纹枯病</item>
+    </string-array>
+    <string-array name="wheat_disease_names_numbers">
+        <item>0000</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_0">
+        <item>无明显症状。</item>
+        <item>幼苗发育延迟。植株易倒或提前枯死。</item>
+        <item>植株成片白穗和黑脚。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_0_keys">
+        <item>0000</item>
+        <item>4005</item>
+        <item>6005</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_1">
+        <item>无明显症状。</item>
+        <item>病株根发生腐烂。</item>
+        <item>病株根变黑。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_1_keys">
+        <item>0100</item>
+        <item>4165</item>
+        <item>6140</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_2">
+        <item>无明显症状。</item>
+        <item>同叶片一样，叶片初生褪绿色小点，不久即形成椭圆形桔红色的夏孢子堆，夏孢子堆散生。</item>
+        <item>叶鞘上形成褐色云纹状斑，严重时叶鞘连同叶片枯死。</item>
+        <item>叶鞘易剥落，内生灰黑色菌丝层，后期产生点状突起（子囊壳）。</item>
+        <item>叶鞘上初为椭圆形水渍状病斑，后发展为中间灰白色，边缘浅褐色的云纹斑，病斑扩大连片形成花秆。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_2_keys">
+        <item>0200</item>
+        <item>1210</item>
+        <item>4205</item>
+        <item>6205</item>
+        <item>7270</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_3">
+        <item>无明显症状。</item>
+        <item>叶片最初为褪绿条斑，不久即形成的夏孢子堆，在叶表面排列成桔黄色虚线状的纵行，这是条锈病的主要特征。发生严重时，叶片变黄枯死。</item>
+        <item>叶片初生褪绿色小点，不久即形成椭圆形桔红色的夏孢子堆，夏孢子堆散生。</item>
+   		<item>发病初期叶上出现白色霉点，逐渐扩大成圆形或椭圆形的病斑，上面长出白粉状的霉层，以后变灰白色至淡褐色。
+   		    后期在霉层中散生黑色小粒（子囊壳）。最后病叶逐渐变黄褐色而枯死。</item>
+        <item>叶片初期呈梭形小褐斑，多个病斑相连导致叶枯。</item>
+        <item>叶片上长出条状黑色孢子堆。</item>
+        <item>地上部老叶变黄，分蘖减少。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_3_keys">
+        <item>0300</item>
+        <item>0399</item>
+        <item>1399</item>
+        <item>2399</item>
+        <item>4310</item>
+        <item>5310</item>
+        <item>6305</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_4">
+        <item>无明显症状。</item>
+   		<item>茎节部分变为水浸状，后渐失绿色，然后沿茎节上下扩。病部褐色或枯黄，潮湿时可产生粉红色霉层（分生孢子），
+   		   空气干燥时病部和病部以上枯死，不产生霉层，后期病部可产生黑色颗粒（即子囊壳）。</item>
+        <item>与叶片类似，茎秆上长出条状黑色孢子堆。</item>
+        <item>与根部类似，病株地下茎变黑腐烂。抽穗后茎基部变黑腐烂加重，形成典型“黑脚”症状。</item>
+        <item>茎秆上病斑梭形，纵裂，病斑扩大连片形成烂茎。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_4_keys">
+        <item>0400</item>
+        <item>3410</item>
+        <item>5410</item>
+        <item>6405</item>
+        <item>7410</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_5">
+        <item>无明显症状。</item>
+   		<item>与茎节部分类似，小麦抽穗扬花期受病菌侵染，先是个别小穗发病，小穗基部变为水浸状，后渐失绿色，然后沿主穗轴上下扩展至邻近小穗。
+   		    病部褐色或枯黄，潮湿时可产生粉红色霉层（分生孢子），空气干燥时病部和病部以上枯死，形成白穗，不产生霉层，后期病部可产生黑色颗粒（即子囊壳）。</item>
+        <item>穗轴及小枝变褐，潮湿时产生霉层。</item>
+   		<item>病穗比健穗较早抽出。最初病小穗外面包一层灰色薄膜，成熟后破裂，散出黑粉(病菌的厚垣孢子)，黑粉吹散后，只残留裸露的穗轴。
+   		    病穗上的小穗全部被毁或部分被毁，仅上部残留阔数健穗。一般主茎、分蘖都出现病穗。</item>
+        <item>枯死或形成白穗，穗不实或籽粒秕瘦。</item>
+        <item>由于花秆烂茎抽不出穗而形成枯孕穗或抽出后形成枯白穗。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_5_keys">
+        <item>0500</item>
+        <item>3580</item>
+        <item>4505</item>
+        <item>5580</item>
+        <item>6540</item>
+        <item>7510</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_6">
+        <item>无明显症状。</item>
+        <item>颖壳上形成上褐色不规则斑。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_6_keys">
+        <item>0600</item>
+        <item>4605</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_7">
+        <item>无明显症状。</item>
+        <item>子粒干瘪、呆白，潮湿时产生白色或粉红色霉状物。</item>
+        <item>病种子上形成褐斑，胚变黑。</item>
+        <item>结实少，子粒秕瘦。</item>
+    </string-array>
+    <string-array name="wheat_disease_descriptions_7_keys">
+        <item>0700</item>
+        <item>3710</item>
+        <item>4705</item>
+        <item>7710</item>
+    </string-array>
+</resources>

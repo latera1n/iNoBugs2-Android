@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wheat_bug_names">
+        <item>麦长管蚜</item>
+        <item>麦二叉蚜</item>
+        <item>麦禾缢管蚜</item>
+        <item>无网长管蚜</item>
+        <item>蝼蛄</item>
+        <item>蛴螬</item>
+        <item>金针虫</item>
+        <item>麦杆蝇</item>
+        <item>麦茎蜂</item>
+        <item>粘虫</item>
+        <item>麦叶蜂</item>
+        <item>潜叶蝇</item>
+        <item>棉铃虫</item>
+        <item>麦红吸浆虫</item>
+        <item>麦黄吸浆虫</item>
+        <item>麦圆蜘蛛</item>
+        <item>麦长腿蜘蛛</item>
+    </string-array>
+    <string-array name="wheat_bug_keys">
+        <item>200</item>
+        <item>201</item>
+        <item>202</item>
+        <item>203</item>
+        <item>204</item>
+        <item>205</item>
+        <item>206</item>
+        <item>207</item>
+        <item>208</item>
+        <item>209</item>
+        <item>210</item>
+        <item>211</item>
+        <item>212</item>
+        <item>213</item>
+        <item>214</item>
+        <item>215</item>
+        <item>216</item>
+    </string-array>
+</resources>

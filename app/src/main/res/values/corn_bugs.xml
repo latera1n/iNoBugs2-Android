@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="corn_bug_names">
+   		<item>玉米螟</item>
+   		<item>大螟</item>
+   		<item>蝼蛄</item>
+   		<item>蚜虫</item>
+   		<item>蛴螬</item>
+   		<item>小地老虎</item>
+   		<item>粘虫</item>
+   		<item>棉铃虫</item>
+   		<item>蝗虫</item>
+   		<item>蓟马</item>
+   		<item>斜纹夜蛾</item>
+   		<item>二点委夜蛾</item>
+   		<item>银纹夜蛾</item>
+   		<item>甜菜夜蛾</item>
+   		<item>耕葵粉蚧</item>
+   	</string-array>
+    <string-array name="corn_bug_keys">
+        <item>300</item>
+   		<item>301</item>
+   		<item>302</item>
+   		<item>303</item>
+   		<item>304</item>
+   		<item>305</item>
+   		<item>306</item>
+   		<item>307</item>
+   		<item>308</item>
+   		<item>309</item>
+   		<item>310</item>
+   		<item>311</item>
+   		<item>312</item>
+   		<item>313</item>
+   		<item>314</item>
+   	</string-array>
+</resources>

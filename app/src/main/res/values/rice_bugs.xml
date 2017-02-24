@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rice_bug_names">
+        <item>二化螟</item>
+        <item>三化螟</item>
+        <item>大螟</item>
+        <item>稻纵卷叶螟</item>
+        <item>灰飞虱</item>
+        <item>褐飞虱</item>
+        <item>白背飞虱</item>
+        <item>稻苞虫</item>
+        <item>粘虫</item>
+        <item>负泥虫</item>
+        <item>稻叶蝉</item>
+        <item>黑尾叶蝉</item>
+        <item>稻弄蝶</item>
+        <item>稻眼蝶</item>
+        <item>福寿螺</item>
+        <item>稻水象甲</item>
+        <item>中华稻蝗</item>
+        <item>稻棘缘蝽</item>
+        <item>稻瘿蚊</item>
+        <item>稻蓟马</item>
+    </string-array>
+    <string-array name="rice_bug_keys">
+        <item>100</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>107</item>
+        <item>108</item>
+        <item>109</item>
+        <item>110</item>
+        <item>111</item>
+        <item>112</item>
+        <item>113</item>
+        <item>114</item>
+        <item>115</item>
+        <item>116</item>
+        <item>117</item>
+        <item>118</item>
+        <item>119</item>
+    </string-array>
+</resources>

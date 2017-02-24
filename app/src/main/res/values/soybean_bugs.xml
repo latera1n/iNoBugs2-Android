@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="soybean_bug_names">
+        <item>苜蓿盲蝽</item>
+        <item>三点盲蝽</item>
+        <item>点峰缘蝽</item>
+        <item>大豆蚜</item>
+        <item>华阿鳃金龟</item>
+        <item>大黑鳃金龟</item>
+        <item>砂潜</item>
+        <item>粟鳞斑叶甲</item>
+        <item>蒙古土象</item>
+        <item>中国豆芫菁</item>
+        <item>二条叶甲</item>
+        <item>斑鞘豆叶甲</item>
+        <item>豆秆黑潜蝇</item>
+        <item>豆根蛇潜蝇</item>
+        <item>小地老虎</item>
+        <item>豆卷叶野螟</item>
+        <item>大豆造桥虫</item>
+        <item>白雪灯蛾</item>
+        <item>苜蓿夜蛾</item>
+        <item>红棕灰夜蛾</item>
+        <item>大豆食心虫</item>
+        <item>豆小卷叶蛾</item>
+        <item>豆蚀叶野螟</item>
+        <item>焰叶蛾</item>
+        <item>豆灰蝶</item>
+    </string-array>
+    <string-array name="soybean_bug_keys">
+        <item>400</item>
+        <item>401</item>
+        <item>402</item>
+        <item>403</item>
+        <item>404</item>
+        <item>405</item>
+        <item>406</item>
+        <item>407</item>
+        <item>408</item>
+        <item>409</item>
+        <item>410</item>
+        <item>411</item>
+        <item>412</item>
+        <item>413</item>
+        <item>414</item>
+        <item>415</item>
+        <item>416</item>
+        <item>417</item>
+        <item>418</item>
+        <item>419</item>
+        <item>420</item>
+        <item>421</item>
+        <item>422</item>
+        <item>423</item>
+        <item>424</item>
+    </string-array>
+</resources>

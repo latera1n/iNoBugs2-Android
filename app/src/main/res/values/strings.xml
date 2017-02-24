@@ -5,6 +5,9 @@
     <string name="page_home">主 页</string>
     <string name="page_all_records">所有记录</string>
 
+    <string name="extra_record_key">mRecord</string>
+    <string name="extra_disease_round_key">diseaseRound</string>
+
     <!-- Action bar menu items -->
     <string name="action_about">关于</string>
 

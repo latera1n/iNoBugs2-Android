@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rice_part_names">
+        <item>植株</item>
+        <item>根</item>
+        <item>叶鞘</item>
+        <item>叶片</item>
+        <item>稻秆</item>
+        <item>稻穗</item>
+        <item>颖壳</item>
+        <item>谷粒</item>
+    </string-array>
+    <string-array name="rice_disease_names">
+        <item>水稻纹枯病</item>
+        <item>水稻恶苗病</item>
+        <item>水稻稻粒黑粉病</item>
+        <item>水稻叶尖枯病</item>
+        <item>水稻白叶枯病</item>
+        <item>水稻烂秧病</item>
+        <item>水稻颖枯病</item>
+        <item>水稻穗果病</item>
+        <item>水稻稻曲病</item>
+        <item>水稻赤枯病</item>
+    </string-array>
+    <string-array name="rice_disease_names_keys">
+        <item>0000</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_0">
+        <item>无明显症状。</item>
+        <item>节间伸长，长得细而高，植株颜色较淡，病死的植株表面有浅红色或白粉霉物。</item>
+        <item>呈污绿色枯死（“卷0型”）或者呈黄褐色枯死（“剥皮死”）。</item>
+   		<item>低矮，节间缩短，节数减少，大多数不能抽穗结实，稻苗成为“一丛青草”，类似稻瘿蚊的“标葱”。
+   		    或近地面的节上长有1个或2个直径3～22mm的子实体，初期白色、浅黄色，表面光滑，渐变为粉黄色，
+   		    表面呈现细裂纹，后期黑褐色，表面不规则龟裂，有灰白色浆状溢出物。</item>
+        <item>出叶慢、分蘖迟缓或不分蘖、株型簇立。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_0_keys">
+        <item>0000</item>
+        <item>1010</item>
+        <item>5080</item>
+        <item>7099</item>
+        <item>9010</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_1">
+        <item>无明显症状。</item>
+        <item>色泽变暗，根毛稀少。</item>
+        <item>发育不良等，引起僵苗不发。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_1_keys">
+        <item>0100</item>
+        <item>5110</item>
+        <item>9110</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_2">
+        <item>无明显症状。</item>
+        <item>起初产生暗绿色水浸状小斑点，以后逐渐扩大呈椭圆形斑纹，似云彩状。病斑中央灰白色，边缘呈暗褐色或灰褐色。</item>
+        <item>节位上的叶鞘里或外有不定数的须根。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_2_keys">
+        <item>0200</item>
+        <item>0280</item>
+        <item>1210</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_3">
+        <item>无明显症状。</item>
+        <item>病斑与叶鞘上的相似。起初产生暗绿色水浸状小斑点，以后逐渐扩大呈椭圆形斑纹，似云彩状。病斑中央灰白色，边缘呈暗褐色或灰褐色。</item>
+        <item>较正常株窄。</item>
+   		<item>叶尖或叶缘开始，病斑为墨绿色；逐渐沿叶缘或叶部中央向下扩展，病斑为灰褐色，
+   		    最后变成枯白色。发病后期，在叶缘一侧或两侧以及叶中央形成长条状病斑，
+   		    在病健交界处可见褐色条纹，病部碎裂成条，甚至全叶枯死。</item>
+   		<item>初起在叶缘产生半透明黄色小斑，以后沿叶缘一侧或两侧或沿中脉发展成波纹状的黄绿或灰绿色病斑，
+   		    很快向下发展为长条状黄白色，将枯心株拔起，切断茎基部，用手挤压，如切口处溢出涕状黄白色菌脓。</item>
+        <item>初为叶尖停止吐水，后心叶突然萎蔫，卷成筒状或者从下部叶片开始，先由叶尖向叶基逐渐变黄色。 再从下部叶片向上延及心叶。</item>
+   		<item>产生大小不等的赤褐色铁锈状斑点，严重时聚合成斑块或条状；斑点最先从下部老叶尖端产生，然后向下逐渐变赤褐色，最后全叶枯死；
+   		    由下部老叶逐渐向上部叶片蔓延，严重者全株只有少数新叶保持绿色，远望似火烧状。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_3_keys">
+        <item>0300</item>
+        <item>0310</item>
+        <item>1310</item>
+        <item>3399</item>
+        <item>4399</item>
+        <item>5310</item>
+        <item>9380</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_4">
+        <item>无明显症状。</item>
+        <item>内生有白色的霉物，后变成淡红色，有时是黑色的小点。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_4_keys">
+        <item>0400</item>
+        <item>1450</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_5">
+        <item>无明显症状。</item>
+        <item>受害变成墨绿色，严重时成枯孕穗或变成白穗。</item>
+        <item>抽穗较早，穗子较小，并且谷粒少，或成为不实粒。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_5_keys">
+        <item>0500</item>
+        <item>0510</item>
+        <item>1510</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_6">
+        <item>无明显症状。</item>
+        <item>病粒谷壳的内外颖合缝外，着生有浅红色霉层。</item>
+        <item>呈暗绿色或暗黄色，或从保壳缝隙处长出红色或白色舌状突起物，初期带黏性，后来成黑色粉末粘附在谷壳上。</item>
+   		<item>尖端或侧面产生淡褐色椭圆形小斑点，随后病斑扩大变为深褐色 ，病斑间愈合，逐渐扩展至谷粒的大部或全部，
+   		    病斑中央色泽变浅，最终变为灰白色，上生许多小黑点，或引起引起谷粒变小，千粒重降低。</item>
+        <item>合缝处露出淡黄色菌块，后膨大如球，包裹全颖壳成墨绿色，最后龟裂，散出墨绿色粉末。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_6_keys">
+        <item>0600</item>
+        <item>1610</item>
+        <item>2610</item>
+        <item>6699</item>
+        <item>8699</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_7">
+        <item>无明显症状。</item>
+        <item>谷粒内隐约显出有黑色物，手压感觉轻软，破裂后米粒变成一团黑粉。</item>
+    </string-array>
+    <string-array name="rice_disease_descriptions_7_keys">
+        <item>0700</item>
+        <item>2790</item>
+    </string-array>
+</resources>

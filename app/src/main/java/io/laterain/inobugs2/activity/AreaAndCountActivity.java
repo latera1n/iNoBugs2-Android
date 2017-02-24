@@ -1,5 +1,6 @@
 package io.laterain.inobugs2.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,7 @@ public class AreaAndCountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_and_count);
-        this.mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(AddRecordActivity.STR_EXTRA_KEY);
+        this.mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
         this.mMethod = mRecord.getMethod();
 
         hideViews();
@@ -71,8 +72,8 @@ public class AreaAndCountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (mMethod == DiagnoseRecord.Method.BY_AREA.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
-                    int totalArea = 0;
-                    int affectedArea = 0;
+                    double totalArea = 0.0;
+                    double affectedArea = 0.0;
                     try {
                         totalArea = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_total_area)).getText().toString());
                         affectedArea = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_area)).getText().toString());
@@ -91,9 +92,8 @@ public class AreaAndCountActivity extends AppCompatActivity {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_area_total_greater_than_affected), Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    System.out.println("" + totalArea * UNITS[totalAreaUnitIndex] + ", " + affectedArea * UNITS[affectedAreaUnitIndex]);
 
-                    // TODO: Add to info.
+                    mRecord.addAreaInfo(totalArea, affectedArea);
                 }
                 if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
                     int totalCropCount = 0;
@@ -114,10 +114,13 @@ public class AreaAndCountActivity extends AppCompatActivity {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_total_greater_than_affected), Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    System.out.println("" + totalCropCount + ", " + affectedCropCount);
 
-                    // TODO: Add to info.
+                    mRecord.addCropCountInfo(totalCropCount, affectedCropCount);
                 }
+
+                startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
+                        .putExtra(getString(R.string.extra_record_key), mRecord)
+                        .putExtra(getString(R.string.extra_disease_round_key), 0));
             }
         });
     }

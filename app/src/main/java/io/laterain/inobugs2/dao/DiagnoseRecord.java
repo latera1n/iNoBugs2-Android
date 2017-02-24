@@ -19,6 +19,12 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     private long mTimeStamp;
     private String mLocation;
     private String mNote;
+
+    private double mTotalArea;
+    private double mAffectedArea;
+    private int mTotalCropCount;
+    private int mAffectedCropCount;
+
     private String mInfo0;
     private String mInfo1;
     private String mInfo2;
@@ -27,28 +33,30 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     private String mInfo5;
     private String mInfo6;
     private String mInfo7;
-    private String mInfo8;
-    private String mInfo9;
-    private String mInfo10;
-    private String mInfo11;
-    private String mInfo12;
-    private String mInfo13;
-    private String mInfo14;
-    private String mInfo15;
-    private String mInfo16;
-    private String mInfo17;
-    private String mInfo18;
-    private String mListViewLine1;
-    private String mListViewLine2;
-    private String mExpertName;
+
     private String mResult1;
     private String mResult2;
     private String mResult3;
+
     /**
      * Required empty constructor.
      */
     public DiagnoseRecord() {
+        this.mLocation = "";
+        this.mNote = "";
+        this.mInfo0 = "";
+        this.mInfo1 = "";
+        this.mInfo2 = "";
+        this.mInfo3 = "";
+        this.mInfo4 = "";
+        this.mInfo5 = "";
+        this.mInfo6 = "";
+        this.mInfo7 = "";
+        this.mResult1 = "";
+        this.mResult2 = "";
+        this.mResult3 = "";
     }
+
     /**
      * Constructor for basic info input at the initial page.
      *
@@ -56,7 +64,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
      *                  0: rice,
      *                  1: wheat,
      *                  2: corn,
-     *                  3: soy bean
+     *                  3: soybean
      * @param harm      the harm type should be
      *                  0: bugs,
      *                  1: diseases
@@ -72,6 +80,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
      * @param note      the note for this record
      */
     public DiagnoseRecord(int crop, int harm, int mode, int method, long timeStamp, String location, String note) {
+        this();
         this.mCrop = crop;
         this.mHarm = harm;
         this.mMode = mode;
@@ -137,36 +146,36 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mNote = note;
     }
 
-    public String getInfo0() {
-        return mInfo0;
+    public double getTotalArea() {
+        return mTotalArea;
     }
 
-    public void setInfo0(String info0) {
-        mInfo0 = info0;
+    public void setTotalArea(double totalArea) {
+        mTotalArea = totalArea;
     }
 
-    public String getInfo1() {
-        return mInfo1;
+    public double getAffectedArea() {
+        return mAffectedArea;
     }
 
-    public void setInfo1(String info1) {
-        mInfo1 = info1;
+    public void setAffectedArea(double affectedArea) {
+        mAffectedArea = affectedArea;
     }
 
-    public String getInfo2() {
-        return mInfo2;
+    public int getTotalCropCount() {
+        return mTotalCropCount;
     }
 
-    public void setInfo2(String info2) {
-        mInfo2 = info2;
+    public void setTotalCropCount(int totalCropCount) {
+        mTotalCropCount = totalCropCount;
     }
 
-    public String getInfo3() {
-        return mInfo3;
+    public int getAffectedCropCount() {
+        return mAffectedCropCount;
     }
 
-    public void setInfo3(String info3) {
-        mInfo3 = info3;
+    public void setAffectedCropCount(int affectedCropCount) {
+        mAffectedCropCount = affectedCropCount;
     }
 
     public String getInfo4() {
@@ -201,118 +210,6 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mInfo7 = info7;
     }
 
-    public String getInfo8() {
-        return mInfo8;
-    }
-
-    public void setInfo8(String info8) {
-        mInfo8 = info8;
-    }
-
-    public String getInfo9() {
-        return mInfo9;
-    }
-
-    public void setInfo9(String info9) {
-        mInfo9 = info9;
-    }
-
-    public String getInfo10() {
-        return mInfo10;
-    }
-
-    public void setInfo10(String info10) {
-        mInfo10 = info10;
-    }
-
-    public String getInfo11() {
-        return mInfo11;
-    }
-
-    public void setInfo11(String info11) {
-        mInfo11 = info11;
-    }
-
-    public String getInfo12() {
-        return mInfo12;
-    }
-
-    public void setInfo12(String info12) {
-        mInfo12 = info12;
-    }
-
-    public String getInfo13() {
-        return mInfo13;
-    }
-
-    public void setInfo13(String info13) {
-        mInfo13 = info13;
-    }
-
-    public String getInfo14() {
-        return mInfo14;
-    }
-
-    public void setInfo14(String info14) {
-        mInfo14 = info14;
-    }
-
-    public String getInfo15() {
-        return mInfo15;
-    }
-
-    public void setInfo15(String info15) {
-        mInfo15 = info15;
-    }
-
-    public String getInfo16() {
-        return mInfo16;
-    }
-
-    public void setInfo16(String info16) {
-        mInfo16 = info16;
-    }
-
-    public String getInfo17() {
-        return mInfo17;
-    }
-
-    public void setInfo17(String info17) {
-        mInfo17 = info17;
-    }
-
-    public String getInfo18() {
-        return mInfo18;
-    }
-
-    public void setInfo18(String info18) {
-        mInfo18 = info18;
-    }
-
-    public String getListViewLine1() {
-        return mListViewLine1;
-    }
-
-    public void setListViewLine1(String listViewLine1) {
-        mListViewLine1 = listViewLine1;
-    }
-
-    public String getListViewLine2() {
-        return mListViewLine2;
-    }
-
-    public void setListViewLine2(String listViewLine2) {
-        mListViewLine2 = listViewLine2;
-    }
-
-    public String getExpertName() {
-        return mExpertName;
-    }
-
-    public void setExpertName(String expertName) {
-        mExpertName = expertName;
-    }
-
     public String getResult1() {
         return mResult1;
     }
@@ -340,7 +237,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     @Override
     public String toString() {
         return "DiagnoseRecord{" +
-                "_id='" + getId() + '\'' +
+                "id=" + getId() +
                 ", mCrop=" + mCrop +
                 ", mHarm=" + mHarm +
                 ", mMode=" + mMode +
@@ -348,6 +245,10 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 ", mTimeStamp=" + mTimeStamp +
                 ", mLocation='" + mLocation + '\'' +
                 ", mNote='" + mNote + '\'' +
+                ", mTotalArea=" + mTotalArea +
+                ", mAffectedArea=" + mAffectedArea +
+                ", mTotalCropCount=" + mTotalCropCount +
+                ", mAffectedCropCount=" + mAffectedCropCount +
                 ", mInfo0='" + mInfo0 + '\'' +
                 ", mInfo1='" + mInfo1 + '\'' +
                 ", mInfo2='" + mInfo2 + '\'' +
@@ -356,31 +257,27 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 ", mInfo5='" + mInfo5 + '\'' +
                 ", mInfo6='" + mInfo6 + '\'' +
                 ", mInfo7='" + mInfo7 + '\'' +
-                ", mInfo8='" + mInfo8 + '\'' +
-                ", mInfo9='" + mInfo9 + '\'' +
-                ", mInfo10='" + mInfo10 + '\'' +
-                ", mInfo11='" + mInfo11 + '\'' +
-                ", mInfo12='" + mInfo12 + '\'' +
-                ", mInfo13='" + mInfo13 + '\'' +
-                ", mInfo14='" + mInfo14 + '\'' +
-                ", mInfo15='" + mInfo15 + '\'' +
-                ", mInfo16='" + mInfo16 + '\'' +
-                ", mInfo17='" + mInfo17 + '\'' +
-                ", mInfo18='" + mInfo18 + '\'' +
-                ", mListViewLine1='" + mListViewLine1 + '\'' +
-                ", mListViewLine2='" + mListViewLine2 + '\'' +
-                ", mExpertName='" + mExpertName + '\'' +
                 ", mResult1='" + mResult1 + '\'' +
                 ", mResult2='" + mResult2 + '\'' +
                 ", mResult3='" + mResult3 + '\'' +
                 '}';
     }
 
+    public void addAreaInfo(double totalArea, double affectedArea) {
+        mTotalArea = totalArea;
+        mAffectedArea = affectedArea;
+    }
+
+    public void addCropCountInfo(int totalCropCount, int affectedCropCount) {
+        mTotalCropCount = totalCropCount;
+        mAffectedCropCount = affectedCropCount;
+    }
+
     public enum Crop {
         RICE,
         WHEAT,
         CORN,
-        SOY_BEAN
+        SOYBEAN
     }
 
     public enum Harm {

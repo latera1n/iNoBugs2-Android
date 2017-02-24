@@ -21,8 +21,6 @@ import io.laterain.inobugs2.util.XMLStringArrayHelper;
 
 public class AddRecordActivity extends AppCompatActivity {
 
-    public final static String STR_EXTRA_KEY = "mRecord";
-
     Spinner mSpinnerCrop;
     Spinner mSpinnerMethod;
 
@@ -81,7 +79,7 @@ public class AddRecordActivity extends AppCompatActivity {
 
                 if (crop >= 0 && crop <= 3 && method >= 0 && method <= 2 && timestamp > 0 && location.length() > 0) {
                     DiagnoseRecord record = new DiagnoseRecord(crop, harm, mode, method, timestamp, location, note);
-                    startActivity(new Intent(getBaseContext(), AreaAndCountActivity.class).putExtra(STR_EXTRA_KEY, record));
+                    startActivity(new Intent(getBaseContext(), AreaAndCountActivity.class).putExtra(getString(R.string.extra_record_key), record));
                 } else {
                     Toast.makeText(AddRecordActivity.this, getString(R.string.toast_message_incomplete_input), Toast.LENGTH_SHORT).show();
                 }

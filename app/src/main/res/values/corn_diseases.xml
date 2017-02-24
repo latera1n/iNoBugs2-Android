@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="corn_parts">
+        <item>植株</item>
+        <item>根</item>
+        <item>叶鞘</item>
+        <item>叶片</item>
+        <item>茎</item>
+        <item>穗</item>
+        <item>苞叶</item>
+        <item>子粒</item>
+    </string-array>
+    <string-array name="corn_disease_names">
+        <item>玉米大斑病</item>
+        <item>玉米小斑病</item>
+        <item>玉米圆斑病</item>
+        <item>玉米褐斑病</item>
+        <item>玉米纹枯病</item>
+        <item>玉米叶锈病</item>
+        <item>玉米黑粉病</item>
+        <item>玉米丝黑穗病</item>
+        <item>玉米茎腐病</item>
+        <item>玉米干腐病</item>
+        <item>玉米穗腐病</item>
+        <item>玉米矮花叶病</item>
+    </string-array>
+    <string-array name="corn_disease_names_numbers">
+        <item>0000</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>7000</item>
+        <item>8000</item>
+        <item>9000</item>
+        <item>10000</item>
+        <item>11000</item>
+        <item>12000</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_0">
+        <item>无明显症状。</item>
+        <item>一株玉米产生多个病瘤。病瘤表面有白色、淡红色，以后逐渐变为灰白色至褐色的薄膜，最后外膜破裂，散出黑褐色粉末。</item>
+        <item>全株急骤青枯。病株茎基部变软，内部空松，遇风易倒折。</item>
+        <item>病株黄弱瘦小，生长缓慢，多数不能抽穗而死亡。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_0_keys">
+        <item>0000</item>
+        <item>6070</item>
+        <item>8010</item>
+        <item>11060</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_1">
+        <item>无明显症状。</item>
+        <item>根部可见红色病症。</item>
+        <item>根系易腐烂。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_1_keys">
+        <item>0100</item>
+        <item>8110</item>
+        <item>11110</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_2">
+        <item>无明显症状。</item>
+   		<item>叶鞘上病斑圆形或椭圆形，褐色至红褐色，小病斑有时汇成大斑，病斑附近的叶组织常呈粉红色。
+   		    发病后期，病斑表皮破裂，散出褐色粉末，叶脉和维管束残存如丝状。</item>
+   		<item>叶鞘上病斑为圆形或不规则形，淡褐色，水浸状，病、健部界线模糊，病斑连片愈合成较大型云纹状斑块，
+   		    中部为淡土黄色或枯草白色，边缘褐色。湿度大时发病部位可见到茂盛的菌丝体，后结成白色小绒球，逐渐变成褐色的菌核。</item>
+        <item>叶鞘病变组织肿大成瘤，尺寸较小，直径仅l－2厘米或更小。病瘤表面有白色、淡红色，以后逐渐变为灰白色至褐色的薄膜，一般不产生黑粉。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_2_keys">
+        <item>0200</item>
+        <item>3290</item>
+        <item>4290</item>
+        <item>6210</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_3">
+        <item>无明显症状。</item>
+   		<item>先从植株下部叶片开始发病，后向上扩展。病斑长梭形，灰褐色或黄褐色，长5－10厘米，宽1厘米左右，有的病斑更大，严重时叶片枯焦。
+   		    天气潮湿时，病斑上可密生灰黑色霉层。此外，有一种发生在抗病品种上的病斑，沿叶脉扩展，为褐色坏死条纹，一般扩展缓慢。</item>
+   		<item>自下部叶片开始，出现褐色半透明水渍状小斑，逐渐向上蔓延，以玉米抽穗时最多。病斑扩大后呈黄褐色纺锤形或椭圆形，边缘常有赤褐色晕纹。
+   		    后期严重时，叶片枯死。在潮湿时病斑上产生黑色绒毛状物。</item>
+        <item>叶片上病斑散生，初为水浸状，淡绿色或淡黄色小斑点，以后扩大圆形或卵圆形，有同心轮纹，病斑中部淡褐色，边缘褐色。</item>
+   		<item>与叶鞘类似，叶片上病斑圆形或椭圆形，褐色至红褐色，小病斑有时汇成大斑，病斑附近的叶组织常呈粉红色。发病后期，病斑表皮破裂，
+   		    散出褐色粉末，叶脉和维管束残存如丝状。</item>
+        <item>叶片两面散生或聚生长圆形、黄褐色、粉状病斑，并散出铁锈色粉末，即病原菌的夏孢子堆和夏孢子。生长后期病斑上生长圆形黑色冬孢子堆和冬孢子。</item>
+        <item>由下部叶片向上逐渐扩展，呈现青枯状。有的病株在雨后出现急性症状。</item>
+   		<item>最初在心叶基部叶脉间出现许多椭圆形退绿小点或斑纹，沿叶脉排列成断续的长短不一的条点，病情进一步发展，叶片上形成较宽的退绿条纹，
+   		    尤其新叶上明显，叶色变黄，组织变硬，质脆易折断。有的从叶尖、叶缘开始，出现紫红色条纹，最后干枯。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_3_keys">
+        <item>0300</item>
+        <item>0399</item>
+        <item>1399</item>
+        <item>2370</item>
+        <item>3310</item>
+        <item>5399</item>
+        <item>8310</item>
+        <item>11310</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_4">
+        <item>无明显症状。</item>
+        <item>茎基部数节出现明显的云纹状病斑。病株茎秆松软，组织解体。</item>
+        <item>茎节病变组织肿大成瘤，尺寸较大，直径可达15厘米。病瘤表面有白色、淡红色，以后逐渐变为灰白色至褐色的薄膜，最后外膜破裂，散出黑褐色粉末。</item>
+        <item>茎基部变软，髓部空松。可见红色病症。</item>
+        <item>茎秆基部和果穗处的茎秆生褐色、黑褐色、紫红色大病斑，严重时茎秆从病部折断。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_4_keys">
+        <item>0400</item>
+        <item>4410</item>
+        <item>6410</item>
+        <item>8470</item>
+        <item>9470</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_5">
+        <item>无明显症状。</item>
+        <item>果穗腐烂，病部变黑凹陷，使果穗变形弯曲。</item>
+        <item>雄穗受害部位多长出囊状或角状小瘤，雌穗受害部位多在上半部，仅个别小花受侵产生病瘤，其它仍能结实；全穗受害可成为1个大病瘤。</item>
+        <item>病果穗较健穗短，顶端尖，不抽花丝，整个果穗变成病瘿。雄穗早期受害，整个花序变为厚垣孢子团。</item>
+        <item>病果穗穗轴变松，易折断。</item>
+   		<item>被害果穗顶部或中部变色，并出现粉红色、蓝绿色、黑灰色或暗褐色、黄褐色霉层，即病原菌的菌丝分生孢子梗和分生孢子。果穗病部苞叶常被密集的菌丝贯穿，
+   		    粘结在一起贴于果穗上不易剥离。</item>
+        <item>少数病株虽能抽穗，但穗小。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_5_keys">
+        <item>0500</item>
+        <item>2510</item>
+        <item>6510</item>
+        <item>7550</item>
+        <item>9510</item>
+        <item>10550</item>
+        <item>11510</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_6">
+        <item>无明显症状。</item>
+        <item>苞叶上病斑初为褐色斑点，后扩大为圆形大斑，也具有同心轮纹，表面密生黑色霉层。</item>
+        <item>后期苞叶张开，内部黑粉散落后，残留丝状的寄主维管束组织，似乱发状。</item>
+        <item>病穗与苞叶粘连，不易剥开。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_6_keys">
+        <item>0600</item>
+        <item>2610</item>
+        <item>7650</item>
+        <item>9610</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_7">
+        <item>无明显症状。</item>
+        <item>子粒变黑、干秕。</item>
+        <item>病穗下部子粒变褐色无光泽，粒间常有白色菌丝体。</item>
+        <item>病籽变红褐色，无光泽，不饱满，质脆，内部空虚，常为交织的菌丝所充塞。</item>
+        <item>子粒少而秕瘦。</item>
+    </string-array>
+    <string-array name="corn_disease_descriptions_7_keys">
+        <item>0700</item>
+        <item>2710</item>
+        <item>9710</item>
+        <item>10750</item>
+        <item>11710</item>
+    </string-array>
+</resources>
