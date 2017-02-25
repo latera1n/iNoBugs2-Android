@@ -6,19 +6,19 @@ package io.laterain.inobugs2.dao;
 
 public class SpinnerItem {
 
-    private int mId;
+    private String mId;
     private String mDisplayValue;
 
-    public SpinnerItem(int id, String displayValue) {
+    public SpinnerItem(String id, String displayValue) {
         mId = id;
         mDisplayValue = displayValue;
     }
 
-    public int getId() {
+    public String getId() {
         return mId;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         mId = id;
     }
 

@@ -178,6 +178,38 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mAffectedCropCount = affectedCropCount;
     }
 
+    public String getInfo0() {
+        return mInfo0;
+    }
+
+    public void setInfo0(String info0) {
+        mInfo0 = info0;
+    }
+
+    public String getInfo1() {
+        return mInfo1;
+    }
+
+    public void setInfo1(String info1) {
+        mInfo1 = info1;
+    }
+
+    public String getInfo2() {
+        return mInfo2;
+    }
+
+    public void setInfo2(String info2) {
+        mInfo2 = info2;
+    }
+
+    public String getInfo3() {
+        return mInfo3;
+    }
+
+    public void setInfo3(String info3) {
+        mInfo3 = info3;
+    }
+
     public String getInfo4() {
         return mInfo4;
     }
@@ -271,6 +303,37 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     public void addCropCountInfo(int totalCropCount, int affectedCropCount) {
         mTotalCropCount = totalCropCount;
         mAffectedCropCount = affectedCropCount;
+    }
+
+    public void addInfoForSelectionRound(int selectionRound, String StrContent) {
+        switch (selectionRound) {
+            case 0:
+                mInfo0 = StrContent;
+                break;
+            case 1:
+                mInfo1 = StrContent;
+                break;
+            case 2:
+                mInfo2 = StrContent;
+                break;
+            case 3:
+                mInfo3 = StrContent;
+                break;
+            case 4:
+                mInfo4 = StrContent;
+                break;
+            case 5:
+                mInfo5 = StrContent;
+                break;
+            case 6:
+                mInfo6 = StrContent;
+                break;
+            case 7:
+                mInfo7 = StrContent;
+                break;
+            default:
+                break;
+        }
     }
 
     public enum Crop {

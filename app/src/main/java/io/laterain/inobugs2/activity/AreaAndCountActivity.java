@@ -60,7 +60,7 @@ public class AreaAndCountActivity extends AppCompatActivity {
     private void initSpinners() {
         Spinner spinnerTotalArea = (Spinner) findViewById(R.id.spinner_area_and_count_total_area);
         Spinner spinnerAffectedArea = (Spinner) findViewById(R.id.spinner_area_and_count_affected_area);
-        List<SpinnerItem> areaSpinnerList = XMLStringArrayHelper.buildSpinnerItemListFromResource(getBaseContext(), R.array.area_units);
+        List<SpinnerItem> areaSpinnerList = XMLStringArrayHelper.buildSpinnerItemListFromArray(getBaseContext(), R.array.area_units);
 
         spinnerTotalArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
         spinnerAffectedArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
@@ -86,8 +86,14 @@ public class AreaAndCountActivity extends AppCompatActivity {
                         return;
                     }
 
-                    int totalAreaUnitIndex = ((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_total_area)).getSelectedItem()).getId();
-                    int affectedAreaUnitIndex = ((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_affected_area)).getSelectedItem()).getId();
+                    int totalAreaUnitIndex = 0;
+                    int affectedAreaUnitIndex = 0;
+                    try {
+                        totalAreaUnitIndex = Integer.parseInt(((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_total_area)).getSelectedItem()).getId());
+                        affectedAreaUnitIndex = Integer.parseInt(((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_affected_area)).getSelectedItem()).getId());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     if (totalArea * UNITS[totalAreaUnitIndex] < affectedArea * UNITS[affectedAreaUnitIndex]) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_area_total_greater_than_affected), Toast.LENGTH_SHORT).show();
                         return;

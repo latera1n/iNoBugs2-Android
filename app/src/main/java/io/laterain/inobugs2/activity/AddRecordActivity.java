@@ -39,10 +39,10 @@ public class AddRecordActivity extends AppCompatActivity {
 
         mSpinnerCrop.setAdapter(new ArrayAdapter<>(getBaseContext(),
                 R.layout.spinner_text_view_smaller_text_size,
-                XMLStringArrayHelper.buildSpinnerItemListFromResource(getBaseContext(), R.array.crop_categories)));
+                XMLStringArrayHelper.buildSpinnerItemListFromArray(getBaseContext(), R.array.crop_categories)));
         mSpinnerMethod.setAdapter(new ArrayAdapter<>(getBaseContext(),
                 R.layout.spinner_text_view_smaller_text_size,
-                XMLStringArrayHelper.buildSpinnerItemListFromResource(getBaseContext(), R.array.method_categories)));
+                XMLStringArrayHelper.buildSpinnerItemListFromArray(getBaseContext(), R.array.method_categories)));
     }
 
     private void initDate() {
@@ -61,10 +61,17 @@ public class AddRecordActivity extends AppCompatActivity {
                 EditText editTextLocation = (EditText) findViewById(R.id.edit_text_add_record_location);
                 EditText editTextNote = (EditText) findViewById(R.id.edit_text_add_record_note);
 
-                int crop = ((SpinnerItem) mSpinnerCrop.getSelectedItem()).getId();
+                int crop = 0;
+                int method = 0;
+                try {
+                    crop = Integer.parseInt(((SpinnerItem) mSpinnerCrop.getSelectedItem()).getId());
+                    method = Integer.parseInt(((SpinnerItem) mSpinnerMethod.getSelectedItem()).getId());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 int harm = radioButtonHarmDisease.isChecked() ? 0 : 1;
                 int mode = radioButtonModeNormal.isChecked() ? 0 : 1;
-                int method = ((SpinnerItem) mSpinnerMethod.getSelectedItem()).getId();
+
                 String timeStr = editTextTime.getText().toString();
                 String location = editTextLocation.getText().toString();
                 String note = editTextNote.getText().toString();
