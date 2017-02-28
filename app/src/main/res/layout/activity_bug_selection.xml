@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_bug_name_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_invisible"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_egg_label"
+                android:text="害虫名称"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_egg_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_egg"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_1_label"
+                android:text="害虫卵量"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_1_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_1"
+                android:layout_marginStart="16dp"
+                android:text="1龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_2_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_2"
+                android:text="2龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_1_label"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_3_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_3"
+                android:text="3龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_2_label"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_4_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_4"
+                android:layout_alignBottom="@+id/edit_text_bug_selection_count_age_4"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_3_label"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_5_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_5"
+                android:text="5龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_4_label"/>
+
+            <TextView
+                android:id="@+id/text_view_bug_selection_count_age_6_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_6"
+                android:text="6龄虫数量"
+                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_alignEnd="@+id/text_view_bug_selection_count_age_5_label"/>
+
+            <Spinner
+                android:id="@+id/spinner_bug_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edit_text_bug_selection_invisible"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_alignTop="@+id/edit_text_bug_selection_invisible"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/text_view_bug_selection_bug_name_label"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:ems="10"
+                android:hint="请输入虫害名称"
+                android:inputType="text"
+                android:selectAllOnFocus="true"
+                android:text=""
+                android:visibility="invisible"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_egg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_invisible"
+                android:ems="10"
+                android:hint="请输入卵量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible">
+
+                <requestFocus/>
+            </EditText>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_egg"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_age_1"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_age_2"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_age_3"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_age_4"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+            <EditText
+                android:id="@+id/edit_text_bug_selection_count_age_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/edit_text_bug_selection_invisible"
+                android:layout_alignEnd="@+id/edit_text_bug_selection_invisible"
+                android:layout_below="@+id/edit_text_bug_selection_count_age_5"
+                android:layout_toRightOf="@+id/text_view_bug_selection_count_age_6_label"
+                android:ems="10"
+                android:hint="请输入数量"
+                android:inputType="number"
+                android:selectAllOnFocus="true"
+                android:text="0"
+                android:textAppearance="@android:style/TextAppearance.Material.Inverse"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_action_button_bug_selection_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@mipmap/ic_check_white_24dp"/>
+
+</RelativeLayout>

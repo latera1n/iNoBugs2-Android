@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".activity.ResultActivity">
         </activity>
+        <activity android:name=".activity.BugSelectionActivity">
+        </activity>
     </application>
 
 </manifest>

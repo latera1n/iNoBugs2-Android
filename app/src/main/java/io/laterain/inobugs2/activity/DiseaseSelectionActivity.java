@@ -71,7 +71,7 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
                 } else {
                     strContent = mTextViewCropPartSymptom.getText().toString();
                 }
-                mRecord.addInfoForSelectionRound(mSelectionRound, strContent);
+                mRecord.addDiseaseInfoForSelectionRound(mSelectionRound, strContent);
                 if (++mSelectionRound < DiseaseSelectionUIContentHelper.NUM_PARTS_FOR_CROP[mCrop]) {
                     startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
                             .putExtra(getString(R.string.extra_disease_round_key), mSelectionRound)

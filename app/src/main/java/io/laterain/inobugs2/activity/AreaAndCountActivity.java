@@ -127,9 +127,14 @@ public class AreaAndCountActivity extends AppCompatActivity {
                     mRecord.addCropCountInfo(totalCropCount, affectedBugCropCount, affectedEggCropCount);
                 }
 
-                startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
-                        .putExtra(getString(R.string.extra_disease_round_key), 0)
-                        .putExtra(getString(R.string.extra_record_key), mRecord));
+                if (mRecord.getHarm() == DiagnoseRecord.Harm.DISESES.ordinal()) {
+                    startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
+                            .putExtra(getString(R.string.extra_disease_round_key), 0)
+                            .putExtra(getString(R.string.extra_record_key), mRecord));
+                } else {
+                    startActivity(new Intent(getBaseContext(), BugSelectionActivity.class)
+                            .putExtra(getString(R.string.extra_record_key), mRecord));
+                }
             }
         });
     }

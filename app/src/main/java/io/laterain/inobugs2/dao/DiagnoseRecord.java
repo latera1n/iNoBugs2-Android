@@ -316,7 +316,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mAffectedEggCropCount = affectedEggCropCount;
     }
 
-    public void addInfoForSelectionRound(int selectionRound, String StrContent) {
+    public void addDiseaseInfoForSelectionRound(int selectionRound, String StrContent) {
         switch (selectionRound) {
             case 0:
                 mInfo0 = StrContent;
@@ -344,6 +344,40 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 break;
             default:
                 break;
+        }
+    }
+
+    public void addBugInfo(String bugKeyOrName, String[] bugAndEggCount) {
+        mInfo0 = bugKeyOrName;
+        int countLength = bugAndEggCount.length;
+        for (int i = 0; i < countLength; i++) {
+            int indexForInfo = i + 1;
+            String StrFroInfo = bugAndEggCount[indexForInfo];
+            switch (indexForInfo) {
+                case 1:
+                    mInfo1 = StrFroInfo;
+                    break;
+                case 2:
+                    mInfo2 = StrFroInfo;
+                    break;
+                case 3:
+                    mInfo3 = StrFroInfo;
+                    break;
+                case 4:
+                    mInfo4 = StrFroInfo;
+                    break;
+                case 5:
+                    mInfo5 = StrFroInfo;
+                    break;
+                case 6:
+                    mInfo6 = StrFroInfo;
+                    break;
+                case 7:
+                    mInfo7 = StrFroInfo;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
