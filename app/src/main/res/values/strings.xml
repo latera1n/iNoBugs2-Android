@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">病虫随手记</string>
+    <string name="app_name">iNoBugs 2</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="page_home">主 页</string>
@@ -41,6 +41,35 @@
     <string name="about_author">代码/UI: Ryan</string>
     <string name="about_special_thanks">特别鸣谢: Louz</string>
     <string name="about_copyright">© 2017 laterain.io</string>
+
+    <!-- Bug result activity -->
+    <string name="result_bug_text_view_default_text">无</string>
+    <string name="result_bug_text_view_default_number_value">0</string>
+    <string name="result_bug_basic_info_title_label">基本信息</string>
+    <string name="result_bug_basic_info_type_label">类型</string>
+    <string name="result_bug_basic_info_date_and_location_label">日期和地点</string>
+    <string name="result_bug_basic_info_method_and_mode_label">统计方法和模式</string>
+    <string name="result_bug_bug_name_title_label">虫害名称</string>
+    <string name="result_bug_egg_and_bug_sum_title_label">卵和成虫数量</string>
+    <string name="result_bug_count_detail_title_label">数量详情</string>
+    <string name="result_bug_count_detail_age_1_label">1 龄虫</string>
+    <string name="result_bug_count_detail_age_2_label">2 龄虫</string>
+    <string name="result_bug_count_detail_age_3_label">3 龄虫</string>
+    <string name="result_bug_count_detail_age_4_label">4 龄虫</string>
+    <string name="result_bug_count_detail_age_5_label">5 龄虫</string>
+    <string name="result_bug_count_detail_age_6_label">6 龄虫</string>
+    <string name="result_bug_count_detail_bug_count_total_label">成虫总量</string>
+    <string name="result_bug_count_detail_egg_count_total_label">虫卵总量</string>
+    <string name="result_bug_count_result_title_label">统计结果</string>
+    <string name="result_bug_count_result_total_area_label">总面积</string>
+    <string name="result_bug_count_result_affected_area_label">受害面积</string>
+    <string name="result_bug_count_result_total_crop_count_label">总株数</string>
+    <string name="result_bug_count_result_affected_bug_crop_count_label">虫株数</string>
+    <string name="result_bug_count_result_affected_egg_crop_count_label">卵株数</string>
+    <string name="result_bug_count_result_affected_area_percentage_label">受害面积率</string>
+    <string name="result_bug_count_result_affected_bug_crop_count_percentage_label">虫株率</string>
+    <string name="result_bug_count_result_affected_egg_crop_count_percentage_label">卵株率</string>
+    <string name="result_bug_note_title_label">备注</string>
 
     <!-- About alert dialog fragment -->
     <string name="dialog_about_title">I Didn\'t Change This</string>

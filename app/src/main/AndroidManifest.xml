@@ -38,6 +38,8 @@
         <activity android:name=".activity.AreaAndCountActivity"/>
         <activity android:name=".activity.DiseaseSelectionActivity">
         </activity>
+        <activity android:name=".activity.ResultActivity">
+        </activity>
     </application>
 
 </manifest>
