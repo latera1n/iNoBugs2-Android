@@ -28,7 +28,8 @@
     <string name="area_and_count_total_area_label">总面积</string>
     <string name="area_and_count_affected_area_label">受害面积</string>
     <string name="area_and_count_total_crop_number_label">总株数</string>
-    <string name="area_and_count_affected_crop_number_label">受害株数</string>
+    <string name="area_and_count_affected_bug_crop_number_label">虫株数</string>
+    <string name="area_and_count_affected_egg_crop_number_label">卵株数</string>
 
     <string name="area_and_count_area_hint">请输入面积</string>
     <string name="area_and_count_crop_count_hint">请输入株数</string>
@@ -89,6 +90,6 @@
     <string name="toast_message_invalid_area_total_greater_than_affected">总面积不能小于受害面积</string>
     <string name="toast_message_invalid_crop_count_invalid_format">株数格式有误</string>
     <string name="toast_message_invalid_crop_count_greater_than_zero">株数不能小于 1</string>
-    <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数</string>
+    <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数综总和</string>
 
 </resources>

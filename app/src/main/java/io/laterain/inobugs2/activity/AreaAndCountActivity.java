@@ -44,9 +44,10 @@ public class AreaAndCountActivity extends AppCompatActivity {
     private void hideViews() {
         if (mMethod == DiagnoseRecord.Method.BY_AREA.ordinal()) {
             findViewById(R.id.text_view_area_and_count_total_crop_count_label).setVisibility(View.GONE);
-            findViewById(R.id.text_view_area_and_count_affected_crop_count_label).setVisibility(View.GONE);
+            findViewById(R.id.text_view_area_and_count_affected_bug_crop_count_label).setVisibility(View.GONE);
             findViewById(R.id.edit_text_area_and_count_total_crop_count).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_affected_crop_count).setVisibility(View.GONE);
+            findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count).setVisibility(View.GONE);
+            findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count).setVisibility(View.GONE);
         } else if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal()) {
             findViewById(R.id.text_view_area_and_count_total_area_label).setVisibility(View.GONE);
             findViewById(R.id.text_view_area_and_count_affected_area_label).setVisibility(View.GONE);
@@ -103,25 +104,27 @@ public class AreaAndCountActivity extends AppCompatActivity {
                 }
                 if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
                     int totalCropCount = 0;
-                    int affectedCropCount = 0;
+                    int affectedBugCropCount = 0;
+                    int affectedEggCropCount = 0;
                     try {
                         totalCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_total_crop_count)).getText().toString());
-                        affectedCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_crop_count)).getText().toString());
+                        affectedBugCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count)).getText().toString());
+                        affectedEggCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count)).getText().toString());
                     } catch (NumberFormatException e) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_invalid_format), Toast.LENGTH_SHORT).show();
                     }
 
-                    if (totalCropCount < 1 || affectedCropCount < 1) {
+                    if (totalCropCount < 1 || affectedBugCropCount < 1 || affectedEggCropCount < 1) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_greater_than_zero), Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    if (totalCropCount < affectedCropCount) {
+                    if (totalCropCount < affectedBugCropCount + affectedEggCropCount) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_total_greater_than_affected), Toast.LENGTH_SHORT).show();
                         return;
                     }
 
-                    mRecord.addCropCountInfo(totalCropCount, affectedCropCount);
+                    mRecord.addCropCountInfo(totalCropCount, affectedBugCropCount, affectedEggCropCount);
                 }
 
                 startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)

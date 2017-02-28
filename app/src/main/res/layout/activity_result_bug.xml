@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:orientation="vertical">
 
     <android.support.design.widget.FloatingActionButton
@@ -16,7 +15,7 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:clickable="true"
         app:fabSize="mini"
-        app:srcCompat="@mipmap/ic_keyboard_arrow_right_white_24dp"/>
+        app:srcCompat="@mipmap/ic_save_white_24dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,17 +27,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginEnd="30dp" >
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/text_view_result_bug_basic_info_title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:text="基本信息"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:layout_marginStart="20dp"
                 android:textColor="@android:color/black"/>
 
             <TextView
@@ -57,15 +56,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_text"
-                android:textAppearance="@android:style/TextAppearance.Material" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_basic_info_date_and_location_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="@string/result_bug_basic_info_date_and_location_label"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_basic_info_date_and_location_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -75,15 +74,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_text"
-                android:textAppearance="@android:style/TextAppearance.Material" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_basic_info_method_and_mode_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:text="@string/result_bug_basic_info_method_and_mode_label"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_basic_info_method_and_mode_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"/>
 
             <TextView
@@ -91,17 +90,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                android:textAppearance="@android:style/TextAppearance.Material"
-                android:text="@string/result_bug_text_view_default_text"/>
+                android:text="@string/result_bug_text_view_default_text"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_bug_name_title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:text="@string/result_bug_bug_name_title_label"
-                android:layout_marginBottom="0dp"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@android:color/black"/>
 
@@ -110,16 +109,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/result_bug_text_view_default_text"
-                android:textAppearance="@android:style/TextAppearance.Material"
-                android:layout_marginTop="5dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_egg_and_bug_sum_title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/result_bug_egg_and_bug_sum_title_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@android:color/black"/>
@@ -128,28 +127,28 @@
                 android:id="@+id/text_view_result_bug_egg_and_bug_sum_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:textAppearance="@android:style/TextAppearance.Material" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/result_bug_count_detail_title_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
-                android:layout_marginTop="20dp"
                 android:textColor="@android:color/black"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_age_1_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_1_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_1_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -157,17 +156,17 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_1_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_age_2_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_2_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_2_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -175,17 +174,17 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_2_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_age_3_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_3_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_3_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -193,17 +192,17 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_3_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_age_4_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_4_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_4_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -211,17 +210,17 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_4_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_count_detail_age_5_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_5_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_5_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -229,17 +228,17 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_5_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_bug_age_6_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/result_bug_count_detail_age_6_label"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="5dp"
+                android:text="@string/result_bug_count_detail_age_6_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Caption"
                 />
 
@@ -247,26 +246,27 @@
                 android:id="@+id/text_view_result_bug_count_detail_age_6_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@android:style/TextAppearance.Material"
+                android:layout_marginStart="30dp"
                 android:text="@string/result_bug_text_view_default_number_value"
-                android:layout_marginStart="30dp" />
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/result_bug_count_detail_bug_count_total_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/result_bug_count_detail_bug_count_total_label"
                         android:layout_marginStart="30dp"
                         android:layout_marginTop="5dp"
+                        android:text="@string/result_bug_count_detail_bug_count_total_label"
                         android:textAppearance="@android:style/TextAppearance.Material.Caption"
                         />
 
@@ -274,23 +274,23 @@
                         android:id="@+id/result_bug_count_detail_bug_count_total_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@android:style/TextAppearance.Material"
+                        android:layout_marginStart="30dp"
                         android:text="@string/result_bug_text_view_default_number_value"
-                        android:layout_marginStart="30dp" />
+                        android:textAppearance="@android:style/TextAppearance.Material"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical" >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/result_bug_count_detail_egg_count_total_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/result_bug_count_detail_egg_count_total_label"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="5dp"
+                        android:text="@string/result_bug_count_detail_egg_count_total_label"
                         android:textAppearance="@android:style/TextAppearance.Material.Caption"
                         />
 
@@ -298,25 +298,25 @@
                         android:id="@+id/result_bug_count_detail_egg_count_total_content"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textAppearance="@android:style/TextAppearance.Material"
+                        android:layout_marginStart="20dp"
                         android:text="@string/result_bug_text_view_default_number_value"
-                        android:layout_marginStart="20dp" />
+                        android:textAppearance="@android:style/TextAppearance.Material"/>
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="30dp" >
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_title_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_title_label"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
+                    android:text="@string/result_bug_count_result_title_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium"
                     android:textColor="@android:color/black"/>
 
@@ -324,9 +324,9 @@
                     android:id="@+id/text_view_result_bug_count_result_total_area_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_total_area_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_total_area_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -334,17 +334,17 @@
                     android:id="@+id/text_view_result_bug_count_result_total_area_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_area_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_area_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_area_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -352,17 +352,17 @@
                     android:id="@+id/text_view_result_bug_count_result_affected_area_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_total_crop_count_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_total_crop_count_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_total_crop_count_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -370,17 +370,17 @@
                     android:id="@+id/text_view_result_bug_count_result_total_crop_count_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_bug_crop_count_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_bug_crop_count_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_bug_crop_count_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -388,17 +388,17 @@
                     android:id="@+id/text_view_result_bug_count_result_affected_bug_crop_count_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_egg_crop_count_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_egg_crop_count_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_egg_crop_count_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -406,17 +406,17 @@
                     android:id="@+id/text_view_result_bug_count_result_affected_egg_crop_count_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_area_percentage_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_area_percentage_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_area_percentage_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -424,17 +424,17 @@
                     android:id="@+id/text_view_result_bug_count_result_affected_area_percentage_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_bug_crop_count_percentage_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_bug_crop_count_percentage_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_bug_crop_count_percentage_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
@@ -442,27 +442,27 @@
                     android:id="@+id/text_view_result_bug_count_result_affected_bug_crop_count_percentage_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_count_result_affected_egg_crop_count_percentage_label"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_count_result_affected_egg_crop_count_percentage_label"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="5dp"
+                    android:text="@string/result_bug_count_result_affected_egg_crop_count_percentage_label"
                     android:textAppearance="@android:style/TextAppearance.Material.Caption"
                     />
 
                 <TextView
-                    android:id="@+id/text_view_result_bug_count_result_affected_egg_crop_count_percentage_label"
+                    android:id="@+id/text_view_result_bug_count_result_affected_egg_crop_count_percentage_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginStart="30dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
 
                 <TextView
                     android:id="@+id/text_view_result_bug_note_title_label"
@@ -479,14 +479,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
-                    android:text="@string/result_bug_text_view_default_text"
                     android:layout_marginTop="5dp"
-                    android:textAppearance="@android:style/TextAppearance.Material" />
+                    android:text="@string/result_bug_text_view_default_text"
+                    android:textAppearance="@android:style/TextAppearance.Material"/>
+
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
-
 </RelativeLayout>
 

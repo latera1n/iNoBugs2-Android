@@ -23,7 +23,8 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     private double mTotalArea;
     private double mAffectedArea;
     private int mTotalCropCount;
-    private int mAffectedCropCount;
+    private int mAffectedBugCropCount;
+    private int mAffectedEggCropCount;
 
     private String mInfo0;
     private String mInfo1;
@@ -170,12 +171,20 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mTotalCropCount = totalCropCount;
     }
 
-    public int getAffectedCropCount() {
-        return mAffectedCropCount;
+    public int getAffectedBugCropCount() {
+        return mAffectedBugCropCount;
     }
 
-    public void setAffectedCropCount(int affectedCropCount) {
-        mAffectedCropCount = affectedCropCount;
+    public void setAffectedBugCropCount(int affectedBugCropCount) {
+        mAffectedBugCropCount = affectedBugCropCount;
+    }
+
+    public int getAffectedEggCropCount() {
+        return mAffectedEggCropCount;
+    }
+
+    public void setAffectedEggCropCount(int affectedEggCropCount) {
+        mAffectedEggCropCount = affectedEggCropCount;
     }
 
     public String getInfo0() {
@@ -280,7 +289,8 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 ", mTotalArea=" + mTotalArea +
                 ", mAffectedArea=" + mAffectedArea +
                 ", mTotalCropCount=" + mTotalCropCount +
-                ", mAffectedCropCount=" + mAffectedCropCount +
+                ", mAffectedBugCropCount=" + mAffectedBugCropCount +
+                ", mAffectedEggCropCount=" + mAffectedEggCropCount +
                 ", mInfo0='" + mInfo0 + '\'' +
                 ", mInfo1='" + mInfo1 + '\'' +
                 ", mInfo2='" + mInfo2 + '\'' +
@@ -300,9 +310,10 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         mAffectedArea = affectedArea;
     }
 
-    public void addCropCountInfo(int totalCropCount, int affectedCropCount) {
+    public void addCropCountInfo(int totalCropCount, int affectedBugCropCount, int affectedEggCropCount) {
         mTotalCropCount = totalCropCount;
-        mAffectedCropCount = affectedCropCount;
+        mAffectedBugCropCount = affectedBugCropCount;
+        mAffectedEggCropCount = affectedEggCropCount;
     }
 
     public void addInfoForSelectionRound(int selectionRound, String StrContent) {
