@@ -19,7 +19,6 @@
     <string name="add_record_time_label">日期</string>
     <string name="add_record_location_label">地点</string>
     <string name="add_record_note_label">备注</string>
-
     <string name="add_record_time_hint">YYYY-M-D</string>
     <string name="add_record_location_hint">请输入地点</string>
     <string name="add_record_note_hint">请输入备注 (可选)</string>
@@ -30,11 +29,19 @@
     <string name="area_and_count_total_crop_number_label">总株数</string>
     <string name="area_and_count_affected_bug_crop_number_label">虫株数</string>
     <string name="area_and_count_affected_egg_crop_number_label">卵株数</string>
-
     <string name="area_and_count_area_hint">请输入面积</string>
     <string name="area_and_count_crop_count_hint">请输入株数</string>
-
     <string name="area_and_count_edit_text_default_text">0</string>
+
+    <!-- Bug Selection Activity -->
+    <string name="bug_selection_bug_name_label">害虫名称</string>
+    <string name="bug_selection_count_egg_label">虫卵数</string>
+    <string name="bug_selection_count_bug_age_1_label">1 龄虫数</string>
+    <string name="bug_selection_count_bug_age_2_label">2 龄虫数</string>
+    <string name="bug_selection_count_bug_age_3_label">3 龄虫数</string>
+    <string name="bug_selection_count_bug_age_4_label">4 龄虫数</string>
+    <string name="bug_selection_count_bug_age_5_label">5 龄虫数</string>
+    <string name="bug_selection_count_bug_age_6_label">6 龄虫数</string>
 
     <!-- About activity-->
     <string name="about_version">2.0</string>
@@ -91,5 +98,6 @@
     <string name="toast_message_invalid_crop_count_invalid_format">株数格式有误</string>
     <string name="toast_message_invalid_crop_count_greater_than_zero">株数不能小于 1</string>
     <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数综总和</string>
+    <string name="toast_message_invalid_bug_or_egg_count_invalid_format">害虫成虫或虫卵数格式有误</string>
 
 </resources>

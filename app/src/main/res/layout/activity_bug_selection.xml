@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_invisible"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_egg_label"
-                android:text="害虫名称"
+                android:text="@string/bug_selection_bug_name_label"
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_egg"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_age_1_label"
-                android:text="害虫卵量"
+                android:text="@string/bug_selection_count_egg_label"
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_1"
                 android:layout_marginStart="16dp"
-                android:text="1龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_1_label"
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_2"
-                android:text="2龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_2_label"
                 android:textAppearance="@android:style/TextAppearance.Material"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_age_1_label"/>
 
@@ -57,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_3"
-                android:text="3龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_3_label"
                 android:textAppearance="@android:style/TextAppearance.Material"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_age_2_label"/>
 
@@ -65,7 +65,7 @@
                 android:id="@+id/text_view_bug_selection_count_age_4_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_4_label"
                 android:textAppearance="@android:style/TextAppearance.Material"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_4"
                 android:layout_alignBottom="@+id/edit_text_bug_selection_count_age_4"
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_5"
-                android:text="5龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_5_label"
                 android:textAppearance="@android:style/TextAppearance.Material"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_age_4_label"/>
 
@@ -85,7 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBaseline="@+id/edit_text_bug_selection_count_age_6"
-                android:text="6龄虫数量"
+                android:text="@string/bug_selection_count_bug_age_6_label"
                 android:textAppearance="@android:style/TextAppearance.Material"
                 android:layout_alignEnd="@+id/text_view_bug_selection_count_age_5_label"/>
 

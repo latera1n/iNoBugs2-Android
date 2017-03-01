@@ -16,6 +16,6 @@ public class ResultActivity extends AppCompatActivity {
         mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
 
         setContentView(mRecord.getHarm() == DiagnoseRecord.Harm.DISESES.ordinal() ?
-                R.layout.activity_result_bug : R.layout.activity_result_disease);
+                R.layout.activity_result_disease : R.layout.activity_result_bug);
     }
 }

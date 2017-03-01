@@ -45,6 +45,7 @@ public class AreaAndCountActivity extends AppCompatActivity {
         if (mMethod == DiagnoseRecord.Method.BY_AREA.ordinal()) {
             findViewById(R.id.text_view_area_and_count_total_crop_count_label).setVisibility(View.GONE);
             findViewById(R.id.text_view_area_and_count_affected_bug_crop_count_label).setVisibility(View.GONE);
+            findViewById(R.id.text_view_area_and_count_affected_egg_crop_count_label).setVisibility(View.GONE);
             findViewById(R.id.edit_text_area_and_count_total_crop_count).setVisibility(View.GONE);
             findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count).setVisibility(View.GONE);
             findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count).setVisibility(View.GONE);

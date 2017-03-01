@@ -2,6 +2,7 @@ package io.laterain.inobugs2.dao;
 
 
 import com.orm.SugarRecord;
+import com.orm.dsl.Ignore;
 
 import java.io.Serializable;
 
@@ -10,6 +11,9 @@ import java.io.Serializable;
  */
 
 public class DiagnoseRecord extends SugarRecord implements Serializable {
+
+    @Ignore
+    public final static int NUM_BUG_FIELDS = 6;
 
     // Persistent fields
     private int mCrop;
@@ -349,30 +353,28 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
 
     public void addBugInfo(String bugKeyOrName, String[] bugAndEggCount) {
         mInfo0 = bugKeyOrName;
-        int countLength = bugAndEggCount.length;
-        for (int i = 0; i < countLength; i++) {
-            int indexForInfo = i + 1;
-            String StrFroInfo = bugAndEggCount[indexForInfo];
-            switch (indexForInfo) {
-                case 1:
+        for (int i = 0; i < NUM_BUG_FIELDS + 1; i++) {
+            String StrFroInfo = bugAndEggCount[i];
+            switch (i) {
+                case 0:
                     mInfo1 = StrFroInfo;
                     break;
-                case 2:
+                case 1:
                     mInfo2 = StrFroInfo;
                     break;
-                case 3:
+                case 2:
                     mInfo3 = StrFroInfo;
                     break;
-                case 4:
+                case 3:
                     mInfo4 = StrFroInfo;
                     break;
-                case 5:
+                case 4:
                     mInfo5 = StrFroInfo;
                     break;
-                case 6:
+                case 5:
                     mInfo6 = StrFroInfo;
                     break;
-                case 7:
+                case 6:
                     mInfo7 = StrFroInfo;
                     break;
                 default:
