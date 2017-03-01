@@ -3,7 +3,9 @@ package io.laterain.inobugs2.util;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import io.laterain.inobugs2.dao.SpinnerItem;
 
@@ -33,6 +35,17 @@ public class XMLStringArrayHelper {
             spinnerItemList.add(new SpinnerItem(keysArray[i], valuesArray[i]));
         }
         return spinnerItemList;
+    }
+
+    public static Map<String, String> buildMapFromKeysAndValue(Context context, int keysResource, int valuesResource) {
+        String[] keysArray = context.getResources().getStringArray(keysResource);
+        String[] valuesArray = context.getResources().getStringArray(valuesResource);
+        int length = keysArray.length;
+        Map<String, String> map = new HashMap<>();
+        for (int i = 0; i < length; i++) {
+            map.put(keysArray[i], valuesArray[i]);
+        }
+        return map;
     }
 
 }

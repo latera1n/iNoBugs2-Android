@@ -12,7 +12,7 @@ import android.widget.Toast;
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.dao.SpinnerItem;
-import io.laterain.inobugs2.util.BugSelectionSpinnerHelper;
+import io.laterain.inobugs2.util.BugUIContentHelper;
 
 public class BugSelectionActivity extends AppCompatActivity {
 
@@ -43,7 +43,7 @@ public class BugSelectionActivity extends AppCompatActivity {
         if (mMode == DiagnoseRecord.Mode.NORMAL.ordinal()) {
             mSpinnerBugSelection.setAdapter(
                     new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size,
-                            BugSelectionSpinnerHelper.getInstance(getBaseContext()).getBugSelectionSpinnerItemsListByCrop(mCrop)));
+                            BugUIContentHelper.getInstance(getBaseContext()).getBugSelectionSpinnerItemsListByCrop(mCrop)));
         } else {
             mEditTextInvisible.setVisibility(View.VISIBLE);
             mSpinnerBugSelection.setVisibility(View.GONE);
@@ -60,8 +60,8 @@ public class BugSelectionActivity extends AppCompatActivity {
                 } else {
                     bugKeyOrName = mEditTextInvisible.getText().toString();
                 }
-                String[] bugAndEggCount = new String[DiagnoseRecord.NUM_BUG_FIELDS + 1];
-                for (int i = 0; i < DiagnoseRecord.NUM_BUG_FIELDS; i++) {
+                String[] bugAndEggCount = new String[DiagnoseRecord.NUM_INFO_FIELDS - 1];
+                for (int i = 0; i < DiagnoseRecord.NUM_INFO_FIELDS - 2; i++) {
                     String currentBugCountText = ((EditText) findViewById(getResources().getIdentifier(
                             STR_EDIT_TEXT_ID_PREFIX + (i + 1), "id", getPackageName()))).getText().toString();
                     if (currentBugCountText.length() == 0) {
@@ -87,7 +87,7 @@ public class BugSelectionActivity extends AppCompatActivity {
                     Toast.makeText(BugSelectionActivity.this, getString(R.string.toast_message_invalid_bug_or_egg_count_invalid_format), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                bugAndEggCount[DiagnoseRecord.NUM_BUG_FIELDS] = eggCountText;
+                bugAndEggCount[DiagnoseRecord.NUM_INFO_FIELDS - 2] = eggCountText;
                 mRecord.addBugInfo(bugKeyOrName, bugAndEggCount);
                 startActivity(new Intent(getBaseContext(), ResultActivity.class).putExtra(getString(R.string.extra_record_key), mRecord));
             }

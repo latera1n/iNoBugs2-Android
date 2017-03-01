@@ -12,7 +12,7 @@ import android.widget.TextView;
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.dao.SpinnerItem;
-import io.laterain.inobugs2.util.DiseaseSelectionUIContentHelper;
+import io.laterain.inobugs2.util.DiseaseUIContentHelper;
 
 public class DiseaseSelectionActivity extends AppCompatActivity {
 
@@ -42,14 +42,14 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
         mTextViewCropPartSymptom = (TextView) findViewById(R.id.edit_text_disease_selection);
         TextView textViewCropPartLabel = (TextView) findViewById(R.id.text_view_disease_selection_label);
 
-        DiseaseSelectionUIContentHelper helper = DiseaseSelectionUIContentHelper.getInstance(this);
+        DiseaseUIContentHelper helper = DiseaseUIContentHelper.getInstance(this);
         textViewCropPartLabel.setText(helper.getDiseaseSelectionCropPartLabel(mCrop, mSelectionRound));
 
         if (mMethod == DiagnoseRecord.Mode.NORMAL.ordinal()) {
             mTextViewCropPartSymptom.setVisibility(View.GONE);
             mSpinnerCropPartSymptoms.setAdapter(new ArrayAdapter<>(getBaseContext(),
                     R.layout.spinner_text_view_smaller_text_size,
-                    helper.getDiseaseSelectionCropPartSymptonSpinnerItemsList(mCrop, mSelectionRound)));
+                    helper.getDiseaseSelectionCropPartSymptomSpinnerItemsList(mCrop, mSelectionRound)));
         } else {
             mSpinnerCropPartSymptoms.setVisibility(View.GONE);
         }
@@ -58,7 +58,7 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
     private void initFloatingActionButton() {
         final FloatingActionButton fabNext = (FloatingActionButton) findViewById(R.id.floating_action_button_disease_selection_next);
 
-        if (mSelectionRound == DiseaseSelectionUIContentHelper.NUM_PARTS_FOR_CROP[mCrop] - 1) {
+        if (mSelectionRound == DiseaseUIContentHelper.NUM_PARTS_FOR_CROP[mCrop] - 1) {
             fabNext.setImageDrawable(getDrawable(R.mipmap.ic_check_white_24dp));
         }
 
@@ -72,12 +72,13 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
                     strContent = mTextViewCropPartSymptom.getText().toString();
                 }
                 mRecord.addDiseaseInfoForSelectionRound(mSelectionRound, strContent);
-                if (++mSelectionRound < DiseaseSelectionUIContentHelper.NUM_PARTS_FOR_CROP[mCrop]) {
+                if (++mSelectionRound < DiseaseUIContentHelper.NUM_PARTS_FOR_CROP[mCrop]) {
                     startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
                             .putExtra(getString(R.string.extra_disease_round_key), mSelectionRound)
                             .putExtra(getString(R.string.extra_record_key), mRecord));
                 } else {
-                    // TODO: Add starting result activity.
+                    startActivity(new Intent(getBaseContext(), ResultActivity.class)
+                            .putExtra(getString(R.string.extra_record_key), mRecord));
                 }
             }
         });

@@ -21,4 +21,10 @@ public class DateHelper {
         dateFormat.setLenient(false);
         return dateFormat.parse(str).getTime();
     }
+
+    public static String convertToFormattedDateString(long timeStamp) {
+        Date date = new Date();
+        date.setTime(timeStamp);
+        return dateFormat.format(date);
+    }
 }

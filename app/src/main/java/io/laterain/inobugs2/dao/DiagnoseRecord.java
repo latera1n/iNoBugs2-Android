@@ -5,6 +5,12 @@ import com.orm.SugarRecord;
 import com.orm.dsl.Ignore;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by dengyuchi on 2/16/17.
@@ -13,7 +19,10 @@ import java.io.Serializable;
 public class DiagnoseRecord extends SugarRecord implements Serializable {
 
     @Ignore
-    public final static int NUM_BUG_FIELDS = 6;
+    public final static int NUM_INFO_FIELDS = 8;
+    public final static String STR_DISEASE_KEY_SEPARATOR = ",";
+    public final static String STR_RESULT_SEPARATOR = ":";
+    private final static int NUM_RESULTS_FIELDS = 3;
 
     // Persistent fields
     private int mCrop;
@@ -353,7 +362,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
 
     public void addBugInfo(String bugKeyOrName, String[] bugAndEggCount) {
         mInfo0 = bugKeyOrName;
-        for (int i = 0; i < NUM_BUG_FIELDS + 1; i++) {
+        for (int i = 0; i < NUM_INFO_FIELDS - 1; i++) {
             String StrFroInfo = bugAndEggCount[i];
             switch (i) {
                 case 0:
@@ -383,6 +392,71 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         }
     }
 
+    public void calculateAndSaveResults() {
+        if (mHarm == Harm.DISEASES.ordinal() && mMode == Mode.NORMAL.ordinal()) {
+            List<String> diseaseSymptomsList = new ArrayList<>();
+            diseaseSymptomsList.add(mInfo0);
+            diseaseSymptomsList.add(mInfo1);
+            diseaseSymptomsList.add(mInfo2);
+            diseaseSymptomsList.add(mInfo3);
+            diseaseSymptomsList.add(mInfo4);
+            diseaseSymptomsList.add(mInfo5);
+            diseaseSymptomsList.add(mInfo6);
+            diseaseSymptomsList.add(mInfo7);
+            Map<Integer, Integer> diseaseProbabilitiesMap = new HashMap<>();
+            for (String diseaseSymptom : diseaseSymptomsList) {
+                char[] diseaseSymptomChars = diseaseSymptom.toCharArray();
+                int keyLength = diseaseSymptom.length();
+                int currentKey = 0;
+                for (int i = 0; i < keyLength - 3; i++) {
+                    currentKey *= 10;
+                    currentKey += diseaseSymptomChars[i] - '0';
+                }
+                int currentScore = (diseaseSymptomChars[keyLength - 2] - '0') * 10 + diseaseSymptomChars[keyLength - 1] - '0';
+                if (diseaseProbabilitiesMap.containsKey(currentKey)) {
+                    diseaseProbabilitiesMap.put(currentKey, diseaseProbabilitiesMap.get(currentKey) + currentScore);
+                } else {
+                    diseaseProbabilitiesMap.put(currentKey, currentScore);
+                }
+
+            }
+            Map<Integer, String> sortedDiseaseProbabilitiesMap = new TreeMap<>(new Comparator<Integer>() {
+                @Override
+                public int compare(Integer integer, Integer t1) {
+                    return t1 - integer;
+                }
+            });
+            for (Map.Entry<Integer, Integer> diseaseEntry : diseaseProbabilitiesMap.entrySet()) {
+                Integer key = diseaseEntry.getKey();
+                Integer value = diseaseEntry.getValue();
+                if (sortedDiseaseProbabilitiesMap.containsKey(key)) {
+                    sortedDiseaseProbabilitiesMap.put(value, sortedDiseaseProbabilitiesMap.get(key) + STR_DISEASE_KEY_SEPARATOR + key + "000");
+                } else {
+                    sortedDiseaseProbabilitiesMap.put(value, "" + key + "000");
+                }
+            }
+            int count = 0;
+            for (Map.Entry<Integer, String> sortedDiseaseEntry : sortedDiseaseProbabilitiesMap.entrySet()) {
+                if (count >= NUM_RESULTS_FIELDS) {
+                    break;
+                }
+                switch (count++) {
+                    case 0:
+                        mResult1 += sortedDiseaseEntry.getKey() + STR_RESULT_SEPARATOR + sortedDiseaseEntry.getValue();
+                        break;
+                    case 1:
+                        mResult2 += sortedDiseaseEntry.getKey() + STR_RESULT_SEPARATOR + sortedDiseaseEntry.getValue();
+                        break;
+                    case 2:
+                        mResult3 += sortedDiseaseEntry.getKey() + STR_RESULT_SEPARATOR + sortedDiseaseEntry.getValue();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+
     public enum Crop {
         RICE,
         WHEAT,
@@ -391,7 +465,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     }
 
     public enum Harm {
-        DISESES,
+        DISEASES,
         BUGS
     }
 

@@ -77,8 +77,8 @@ public class AreaAndCountActivity extends AppCompatActivity {
                     double totalArea = 0.0;
                     double affectedArea = 0.0;
                     try {
-                        totalArea = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_total_area)).getText().toString());
-                        affectedArea = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_area)).getText().toString());
+                        totalArea = Double.parseDouble(((EditText) findViewById(R.id.edit_text_area_and_count_total_area)).getText().toString());
+                        affectedArea = Double.parseDouble(((EditText) findViewById(R.id.edit_text_area_and_count_affected_area)).getText().toString());
                     } catch (NumberFormatException e) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_area_invalid_format), Toast.LENGTH_SHORT).show();
                     }
@@ -128,7 +128,7 @@ public class AreaAndCountActivity extends AppCompatActivity {
                     mRecord.addCropCountInfo(totalCropCount, affectedBugCropCount, affectedEggCropCount);
                 }
 
-                if (mRecord.getHarm() == DiagnoseRecord.Harm.DISESES.ordinal()) {
+                if (mRecord.getHarm() == DiagnoseRecord.Harm.DISEASES.ordinal()) {
                     startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
                             .putExtra(getString(R.string.extra_disease_round_key), 0)
                             .putExtra(getString(R.string.extra_record_key), mRecord));
