@@ -60,7 +60,7 @@ public class BugSelectionActivity extends AppCompatActivity {
                 } else {
                     bugKeyOrName = mEditTextInvisible.getText().toString();
                 }
-                String[] bugAndEggCount = new String[DiagnoseRecord.NUM_INFO_FIELDS - 1];
+                String[] bugCountArray = new String[DiagnoseRecord.NUM_INFO_FIELDS - 2];
                 for (int i = 0; i < DiagnoseRecord.NUM_INFO_FIELDS - 2; i++) {
                     String currentBugCountText = ((EditText) findViewById(getResources().getIdentifier(
                             STR_EDIT_TEXT_ID_PREFIX + (i + 1), "id", getPackageName()))).getText().toString();
@@ -74,21 +74,20 @@ public class BugSelectionActivity extends AppCompatActivity {
                         Toast.makeText(BugSelectionActivity.this, getString(R.string.toast_message_invalid_bug_or_egg_count_invalid_format), Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    bugAndEggCount[i] = currentBugCountText;
+                    bugCountArray[i] = currentBugCountText;
                 }
-                String eggCountText = ((EditText) findViewById(R.id.edit_text_bug_selection_count_egg)).getText().toString();
-                if (eggCountText.length() == 0) {
+                String eggCount = ((EditText) findViewById(R.id.edit_text_bug_selection_count_egg)).getText().toString();
+                if (eggCount.length() == 0) {
                     Toast.makeText(BugSelectionActivity.this, getString(R.string.toast_message_invalid_bug_or_egg_count_invalid_format), Toast.LENGTH_SHORT).show();
                     return;
                 }
                 try{
-                    int _ = Integer.parseInt(eggCountText);
+                    int _ = Integer.parseInt(eggCount);
                 } catch (Exception e) {
                     Toast.makeText(BugSelectionActivity.this, getString(R.string.toast_message_invalid_bug_or_egg_count_invalid_format), Toast.LENGTH_SHORT).show();
                     return;
                 }
-                bugAndEggCount[DiagnoseRecord.NUM_INFO_FIELDS - 2] = eggCountText;
-                mRecord.addBugInfo(bugKeyOrName, bugAndEggCount);
+                mRecord.addEggAndBugInfo(bugKeyOrName, eggCount, bugCountArray);
                 startActivity(new Intent(getBaseContext(), ResultActivity.class).putExtra(getString(R.string.extra_record_key), mRecord));
             }
         });

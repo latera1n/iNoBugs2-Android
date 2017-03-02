@@ -89,6 +89,9 @@
     <string name="dialog_about_button_2_toast_message">Too lazy to translate. : P</string>
     <string name="dialog_about_button_3_toast_message">Too lazy to translate. : D</string>
 
+    <!-- Universal alert dialog fragment -->
+    <string name="dialog_universal_negative_button_text">确定</string>
+
     <!-- Toast messages -->
     <string name="toast_message_invalid_date">日期格式有误</string>
     <string name="toast_message_incomplete_input">信息填写不完整</string>

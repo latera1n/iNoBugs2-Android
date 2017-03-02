@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.orm.SugarContext;
+
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dummy.DummyContent;
 import io.laterain.inobugs2.fragment.AllRecordsFragment;
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+        SugarContext.init(getBaseContext());
     }
 
 
@@ -125,4 +129,7 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
             }
         }
     }
+
+    
+
 }

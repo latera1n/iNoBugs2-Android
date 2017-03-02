@@ -360,10 +360,11 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         }
     }
 
-    public void addBugInfo(String bugKeyOrName, String[] bugAndEggCount) {
+    public void addEggAndBugInfo(String bugKeyOrName, String eggCount, String[] bugCountArray) {
         mInfo0 = bugKeyOrName;
-        for (int i = 0; i < NUM_INFO_FIELDS - 1; i++) {
-            String StrFroInfo = bugAndEggCount[i];
+        mInfo7 = eggCount;
+        for (int i = 0; i < NUM_INFO_FIELDS - 2; i++) {
+            String StrFroInfo = bugCountArray[i];
             switch (i) {
                 case 0:
                     mInfo1 = StrFroInfo;
@@ -382,9 +383,6 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                     break;
                 case 5:
                     mInfo6 = StrFroInfo;
-                    break;
-                case 6:
-                    mInfo7 = StrFroInfo;
                     break;
                 default:
                     break;
@@ -455,6 +453,43 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 }
             }
         }
+    }
+
+    public int[] getEggAndBugCountArray() {
+        int[] eggAndBugCount = new int[NUM_INFO_FIELDS - 1];
+        int count = 0;
+        while (count < NUM_INFO_FIELDS - 1) {
+            try {
+                switch (count++) {
+                    case 0:
+                        eggAndBugCount[0] = Integer.parseInt(mInfo7);
+                        break;
+                    case 1:
+                        eggAndBugCount[1] = Integer.parseInt(mInfo1);
+                        break;
+                    case 2:
+                        eggAndBugCount[2] = Integer.parseInt(mInfo2);
+                        break;
+                    case 3:
+                        eggAndBugCount[3] = Integer.parseInt(mInfo3);
+                        break;
+                    case 4:
+                        eggAndBugCount[4] = Integer.parseInt(mInfo4);
+                        break;
+                    case 5:
+                        eggAndBugCount[5] = Integer.parseInt(mInfo5);
+                        break;
+                    case 6:
+                        eggAndBugCount[6] = Integer.parseInt(mInfo6);
+                        break;
+                    default:
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+        return eggAndBugCount;
     }
 
     public enum Crop {
