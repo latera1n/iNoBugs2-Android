@@ -9,17 +9,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
-import io.laterain.inobugs2.dao.SpinnerItem;
 import io.laterain.inobugs2.fragment.UniversalAlertDialogFragment;
 import io.laterain.inobugs2.util.BugUIContentHelper;
-import io.laterain.inobugs2.util.Constants;
 import io.laterain.inobugs2.util.DateHelper;
-import io.laterain.inobugs2.util.DiseaseUIContentHelper;
-import io.laterain.inobugs2.util.XMLStringArrayHelper;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -37,6 +31,7 @@ public class ResultActivity extends AppCompatActivity {
 
         mRecord.calculateAndSaveResults();
         fillUIContents();
+        // TODO: Add CLOSE or DELETE record button on the action bar.
         initFloatingActionButton();
     }
 
@@ -120,23 +115,31 @@ public class ResultActivity extends AppCompatActivity {
         } else {
             fabSave = (FloatingActionButton) findViewById(R.id.floating_action_button_result_bug_next);
         }
-        fabSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                long savedId = mRecord.save();
-                System.out.println(savedId);
-                if (savedId > 0) {
-                    new UniversalAlertDialogFragment().newInstance(R.string.dialog_universal_add_record_success_title, -1, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                        }
-                    }).show(getSupportFragmentManager(), null);
+        if (getIntent().getBooleanExtra(getString(R.string.extra_should_show_edit_fab_button), false)) {
+            fabSave.setImageDrawable(getDrawable(R.mipmap.ic_edit_white_24dp));
+            fabSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // TODO: Add editing functions.
                 }
-            }
-        });
+            });
+        } else {
+            fabSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (mRecord.save() > 0) {
+                        UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_add_record_success_title, -1, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                            }
+                        }).show(getSupportFragmentManager(), null);
+                    }
+                }
+            });
+        }
     }
 
 }

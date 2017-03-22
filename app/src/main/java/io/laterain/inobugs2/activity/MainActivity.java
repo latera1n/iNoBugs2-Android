@@ -11,12 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.orm.SugarContext;
 
 import io.laterain.inobugs2.R;
-import io.laterain.inobugs2.dummy.DummyContent;
+import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.fragment.AllRecordsFragment;
 import io.laterain.inobugs2.fragment.MainFragment;
 
@@ -84,8 +83,11 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
     }
 
     @Override
-    public void onAllRecordsFragmentInteraction(DummyContent.DummyItem item) {
-        Toast.makeText(this, item.getId(), Toast.LENGTH_SHORT).show();
+    public void onAllRecordsFragmentInteraction(DiagnoseRecord diagnoseRecord) {
+        startActivity(new Intent(MainActivity.this, ResultActivity.class)
+                .putExtra(getString(R.string.extra_record_key), diagnoseRecord)
+                .putExtra(getString(R.string.extra_should_show_edit_fab_button), true)
+        .putExtra(getString(R.string.extra_should_show_delete_record_button), true));
     }
 
     /**
@@ -130,6 +132,5 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
         }
     }
 
-    
 
 }

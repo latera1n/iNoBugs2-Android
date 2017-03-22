@@ -1,30 +1,29 @@
 package io.laterain.inobugs2.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import io.laterain.inobugs2.R;
-import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
+import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.fragment.AllRecordsFragment.OnListFragmentInteractionListener;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecordsRecyclerViewAdapter.RecordViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final Context mContext;
+    private final List<DiagnoseRecord> mDiagnoseRecordList;
     private final OnListFragmentInteractionListener mListener;
 
-    public AllRecordsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
-        mListener = listener;
+    public AllRecordsRecyclerViewAdapter(Context context, List<DiagnoseRecord> diagnoseRecordList, OnListFragmentInteractionListener listener) {
+        this.mContext = context;
+        this.mDiagnoseRecordList = diagnoseRecordList;
+        this.mListener = listener;
     }
 
     @Override
@@ -36,17 +35,17 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
 
     @Override
     public void onBindViewHolder(final RecordViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        DiagnoseRecord diagnoseRecord = mDiagnoseRecordList.get(position);
+        holder.mRecord = diagnoseRecord;
+        holder.mTitleView.setText(mContext.getResources().getStringArray(R.array.crop_categories)[diagnoseRecord.getCrop()]
+                + mContext.getResources().getStringArray(R.array.harm_categories)[diagnoseRecord.getHarm()]);
+        holder.mInfoView.setText("Sample Text");
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onAllRecordsFragmentInteraction(holder.mItem);
+                    mListener.onAllRecordsFragmentInteraction(holder.mRecord);
                 }
             }
         });
@@ -54,25 +53,27 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return mDiagnoseRecordList.size();
     }
 
     public class RecordViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final ImageView mImageView;
+        public final TextView mTitleView;
+        public final TextView mInfoView;
+        public DiagnoseRecord mRecord;
 
         public RecordViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mImageView = (ImageView) view.findViewById(R.id.image_view_fragment_all_records);
+            mTitleView = (TextView) view.findViewById(R.id.text_view_fragment_all_records_title_label);
+            mInfoView = (TextView) view.findViewById(R.id.text_view_fragment_all_records_info);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return mRecord.toString();
         }
     }
 }
