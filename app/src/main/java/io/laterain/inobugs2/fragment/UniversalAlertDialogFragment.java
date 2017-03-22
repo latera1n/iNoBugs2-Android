@@ -16,33 +16,29 @@ public class UniversalAlertDialogFragment extends DialogFragment {
 
     private final static String STR_ARG_TITLE_KEY = "title";
     private final static String STR_ARG_MSG_KEY = "msg";
+    private static DialogInterface.OnClickListener mOnClickListener;
 
-    public static UniversalAlertDialogFragment newInstance(int title, int message) {
+    public static UniversalAlertDialogFragment newInstance(int title, int message, DialogInterface.OnClickListener onClickListener) {
         UniversalAlertDialogFragment frag = new UniversalAlertDialogFragment();
         Bundle args = new Bundle();
         args.putInt(STR_ARG_TITLE_KEY, title);
         args.putInt(STR_ARG_MSG_KEY, message);
         frag.setArguments(args);
+        mOnClickListener = onClickListener;
         return frag;
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        int title = getArguments().getInt("title");
-        int message = getArguments().getInt("message");
         setCancelable(false);
-        return new AlertDialog.Builder(getActivity())
-                .setTitle(title)
-                .setMessage(message)
-                .setNegativeButton(R.string.dialog_universal_negative_button_text,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                // ((FragmentAlertDialog)getActivity()).doNegativeClick();
-                                // TODO: Add on click handler.
-                            }
-                        }
-                )
-                .create();
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(getActivity());
+        if (getArguments().getInt(STR_ARG_TITLE_KEY) != -1) {
+            dialogBuilder.setTitle(getArguments().getInt(STR_ARG_TITLE_KEY));
+        }
+        if (getArguments().getInt(STR_ARG_MSG_KEY) != -1) {
+            dialogBuilder.setMessage(getArguments().getInt(STR_ARG_MSG_KEY));
+        }
+        return dialogBuilder.setNegativeButton(R.string.dialog_universal_negative_button_text, mOnClickListener).create();
     }
 
 }

@@ -90,6 +90,7 @@
     <string name="dialog_about_button_3_toast_message">Too lazy to translate. : D</string>
 
     <!-- Universal alert dialog fragment -->
+    <string name="dialog_universal_add_record_success_title">添加记录成功</string>
     <string name="dialog_universal_negative_button_text">确定</string>
 
     <!-- Toast messages -->

@@ -1,6 +1,7 @@
 package io.laterain.inobugs2.activity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,6 +14,7 @@ import org.w3c.dom.Text;
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.dao.SpinnerItem;
+import io.laterain.inobugs2.fragment.UniversalAlertDialogFragment;
 import io.laterain.inobugs2.util.BugUIContentHelper;
 import io.laterain.inobugs2.util.Constants;
 import io.laterain.inobugs2.util.DateHelper;
@@ -122,8 +124,16 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 long savedId = mRecord.save();
+                System.out.println(savedId);
                 if (savedId > 0) {
-
+                    new UniversalAlertDialogFragment().newInstance(R.string.dialog_universal_add_record_success_title, -1, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    }).show(getSupportFragmentManager(), null);
                 }
             }
         });
