@@ -34,6 +34,7 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
     }
 
     @Override
+    @SuppressWarnings("SetTextI18n")
     public void onBindViewHolder(final RecordViewHolder holder, int position) {
         DiagnoseRecord diagnoseRecord = mDiagnoseRecordList.get(position);
         holder.mRecord = diagnoseRecord;
@@ -56,14 +57,14 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
         return mDiagnoseRecordList.size();
     }
 
-    public class RecordViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final ImageView mImageView;
-        public final TextView mTitleView;
-        public final TextView mInfoView;
-        public DiagnoseRecord mRecord;
+    class RecordViewHolder extends RecyclerView.ViewHolder {
+        final View mView;
+        final ImageView mImageView;
+        final TextView mTitleView;
+        final TextView mInfoView;
+        DiagnoseRecord mRecord;
 
-        public RecordViewHolder(View view) {
+        RecordViewHolder(View view) {
             super(view);
             mView = view;
             mImageView = (ImageView) view.findViewById(R.id.image_view_fragment_all_records);

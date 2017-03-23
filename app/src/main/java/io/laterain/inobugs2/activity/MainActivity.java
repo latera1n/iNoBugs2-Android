@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
         startActivity(new Intent(MainActivity.this, ResultActivity.class)
                 .putExtra(getString(R.string.extra_record_key), diagnoseRecord)
                 .putExtra(getString(R.string.extra_should_show_edit_fab_button), true)
-        .putExtra(getString(R.string.extra_should_show_delete_record_button), true));
+                .putExtra(getString(R.string.extra_should_show_delete_record_button), true));
     }
 
     /**

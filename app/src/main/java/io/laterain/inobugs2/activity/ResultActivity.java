@@ -38,7 +38,7 @@ public class ResultActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void fillUIContents() {
         if (mRecord.getHarm() == DiagnoseRecord.Harm.DISEASES.ordinal()) {
-
+            // TODO: Add UI fill-ups for DISEASES.
         } else {
             ((TextView) findViewById(R.id.text_view_result_bug_basic_info_type_content)).setText(
                     getResources().getStringArray(R.array.crop_categories)[mRecord.getCrop()]
