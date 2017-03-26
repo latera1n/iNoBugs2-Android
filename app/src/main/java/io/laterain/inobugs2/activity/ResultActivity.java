@@ -6,8 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
@@ -31,8 +34,51 @@ public class ResultActivity extends AppCompatActivity {
 
         mRecord.calculateAndSaveResults();
         fillUIContents();
-        // TODO: Add CLOSE or DELETE record button on the action bar.
         initFloatingActionButton();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (getIntent().getBooleanExtra(getString(R.string.extra_should_show_delete_record_button), false)) {
+            getMenuInflater().inflate(R.menu.menu_result_view, menu);
+        } else {
+            getMenuInflater().inflate(R.menu.menu_result, menu);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_result_close) {
+            UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_discard_adding_record_title,
+                    R.string.dialog_universal_discard_adding_record_message, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    }).show(getSupportFragmentManager(), null);
+        } else if (id == R.id.action_result_delete) {
+            UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_delete_title,
+                    R.string.dialog_universal_delete_message, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            System.out.println(mRecord.getIdCopy());
+                            if (mRecord.delete()) {
+                                Toast.makeText(ResultActivity.this, R.string.toast_message_deleting_record_success, Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(ResultActivity.this, R.string.toast_message_deleting_record_error, Toast.LENGTH_SHORT).show();
+                            }
+                            Intent intent = new Intent(ResultActivity.this, MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                        }
+                    }).show(getSupportFragmentManager(), null);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @SuppressLint("SetTextI18n")

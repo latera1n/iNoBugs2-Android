@@ -10,17 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.adapter.AllRecordsRecyclerViewAdapter;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
-import io.laterain.inobugs2.dummy.DummyContent;
-import io.laterain.inobugs2.dummy.DummyContent.DummyItem;
-
-import static android.support.v7.recyclerview.R.attr.layoutManager;
 
 /**
  * Modified by dengyuchi on 3/24/17.
@@ -54,22 +50,32 @@ public class AllRecordsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_all_records_list, container, false);
-
-        if (view instanceof RecyclerView) {
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_fragment_all_records_list);
+        if (recyclerView != null) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            List<DiagnoseRecord> diagnoseRecordList = DiagnoseRecord.findWithQuery(DiagnoseRecord.class, "SELECT * FROM DIAGNOSE_RECORD");
-            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-            recyclerView.addItemDecoration(dividerItemDecoration);
-            recyclerView.setAdapter(new AllRecordsRecyclerViewAdapter(getContext(), diagnoseRecordList, mListener));
+            List<DiagnoseRecord> diagnoseRecordList = new ArrayList<>();
+            try {
+                diagnoseRecordList = DiagnoseRecord.findWithQuery(DiagnoseRecord.class, "SELECT * FROM DIAGNOSE_RECORD");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            System.out.println(diagnoseRecordList.size());
+            if (diagnoseRecordList.size() > 0) {
+                DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
+                recyclerView.addItemDecoration(dividerItemDecoration);
+                recyclerView.setAdapter(new AllRecordsRecyclerViewAdapter(getContext(), diagnoseRecordList, mListener));
+            } else {
+                recyclerView.setVisibility(View.GONE);
+                view.findViewById(R.id.text_view_fragment_all_records_list_empty_label).setVisibility(View.VISIBLE);
+                recyclerView.setAdapter(new AllRecordsRecyclerViewAdapter(getContext(), diagnoseRecordList, mListener));
+            }
         }
         return view;
     }

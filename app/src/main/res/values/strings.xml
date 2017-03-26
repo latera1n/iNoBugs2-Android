@@ -12,6 +12,11 @@
 
     <!-- Action bar menu items -->
     <string name="action_about">关于</string>
+    <string name="action_result_close">关闭</string>
+    <string name="action_result_delete">删除</string>
+
+    <!-- All records list fragment-->
+    <string name="fragment_all_records_list_empty_label">无记录</string>
 
     <!-- Add record activity -->
     <string name="add_record_crop_label">农作物</string>
@@ -93,6 +98,10 @@
 
     <!-- Universal alert dialog fragment -->
     <string name="dialog_universal_add_record_success_title">添加记录成功</string>
+    <string name="dialog_universal_discard_adding_record_title">放弃添加记录</string>
+    <string name="dialog_universal_discard_adding_record_message">这条记录将不会被保存。</string>
+    <string name="dialog_universal_delete_title">删除记录</string>
+    <string name="dialog_universal_delete_message">这条记录将被永久删除。</string>
     <string name="dialog_universal_negative_button_text">确定</string>
 
     <!-- Toast messages -->
@@ -105,5 +114,7 @@
     <string name="toast_message_invalid_crop_count_greater_than_zero">株数不能小于 1</string>
     <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数综总和</string>
     <string name="toast_message_invalid_bug_or_egg_count_invalid_format">害虫成虫或虫卵数格式有误</string>
+    <string name="toast_message_deleting_record_success">删除数据成功</string>
+    <string name="toast_message_deleting_record_error">删除数据错误</string>
 
 </resources>

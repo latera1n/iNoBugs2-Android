@@ -25,6 +25,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     private final static int NUM_RESULTS_FIELDS = 3;
 
     // Persistent fields
+    private long mIdCopy;
     private int mCrop;
     private int mHarm;
     private int mMode;
@@ -56,6 +57,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
      * Required empty constructor.
      */
     public DiagnoseRecord() {
+        this.mIdCopy = 0L;
         this.mLocation = "";
         this.mNote = "";
         this.mInfo0 = "";
@@ -102,6 +104,14 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         this.mTimeStamp = timeStamp;
         this.mLocation = location;
         this.mNote = note;
+    }
+
+    public long getIdCopy() {
+        return mIdCopy;
+    }
+
+    public void setIdCopy(long idCopy) {
+        mIdCopy = idCopy;
     }
 
     public int getCrop() {
@@ -292,6 +302,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
     public String toString() {
         return "DiagnoseRecord{" +
                 "id=" + getId() +
+                ", mIdCopy=" + mIdCopy +
                 ", mCrop=" + mCrop +
                 ", mHarm=" + mHarm +
                 ", mMode=" + mMode +
@@ -513,6 +524,19 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         BY_AREA,
         BY_CROP_COUNT,
         BOTH
+    }
+
+    @Override
+    public long save() {
+        long id = super.save();
+        mIdCopy = id;
+        return id;
+    }
+
+    @Override
+    public boolean delete() {
+        setId(mIdCopy);
+        return super.delete();
     }
 
 }

@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
         SugarContext.init(getBaseContext());
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -84,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements AllRecordsFragmen
 
     @Override
     public void onAllRecordsFragmentInteraction(DiagnoseRecord diagnoseRecord) {
+        diagnoseRecord.setIdCopy(diagnoseRecord.getId());
         startActivity(new Intent(MainActivity.this, ResultActivity.class)
                 .putExtra(getString(R.string.extra_record_key), diagnoseRecord)
                 .putExtra(getString(R.string.extra_should_show_edit_fab_button), true)
