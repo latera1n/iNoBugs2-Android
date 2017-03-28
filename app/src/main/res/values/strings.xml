@@ -9,6 +9,7 @@
     <string name="extra_disease_round_key">diseaseRound</string>
     <string name="extra_should_show_edit_fab_button">extraShouldShowEditButton</string>
     <string name="extra_should_show_delete_record_button">extraShouldShowDeleteRecordButton</string>
+    <string name="extra_is_editing">extraIsEditing</string>
 
     <!-- Action bar menu items -->
     <string name="action_about">关于</string>
@@ -99,9 +100,11 @@
     <!-- Universal alert dialog fragment -->
     <string name="dialog_universal_add_record_success_title">添加记录成功</string>
     <string name="dialog_universal_discard_adding_record_title">放弃添加记录</string>
-    <string name="dialog_universal_discard_adding_record_message">这条记录将不会被保存。</string>
+    <string name="dialog_universal_discard_adding_record_message">这条记录将不会被保存</string>
+    <string name="dialog_universal_discard_editing_record_title">放弃编辑记录</string>
+    <string name="dialog_universal_discard_editing_record_message">所做的更改将不会被保存</string>
     <string name="dialog_universal_delete_title">删除记录</string>
-    <string name="dialog_universal_delete_message">这条记录将被永久删除。</string>
+    <string name="dialog_universal_delete_message">这条记录将被永久删除</string>
     <string name="dialog_universal_negative_button_text">确定</string>
 
     <!-- Toast messages -->

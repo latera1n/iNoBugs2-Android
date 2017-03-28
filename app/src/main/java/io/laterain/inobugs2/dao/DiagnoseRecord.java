@@ -539,4 +539,14 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         return super.delete();
     }
 
+    public void updateBasicInfo(int crop, int harm, int mode, int method, long timeStamp, String location, String note) {
+        mCrop = crop;
+        mHarm = harm;
+        mMode = mode;
+        mMethod = method;
+        mTimeStamp = timeStamp;
+        mLocation = location;
+        mNote = note;
+    }
+
 }

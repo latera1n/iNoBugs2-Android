@@ -38,6 +38,9 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
     public void onBindViewHolder(final RecordViewHolder holder, int position) {
         DiagnoseRecord diagnoseRecord = mDiagnoseRecordList.get(position);
         holder.mRecord = diagnoseRecord;
+        if (diagnoseRecord.getHarm() == DiagnoseRecord.Harm.DISEASES.ordinal()) {
+            holder.mImageView.setImageResource(R.mipmap.ic_list_virus);
+        }
         holder.mTitleView.setText(mContext.getResources().getStringArray(R.array.crop_categories)[diagnoseRecord.getCrop()]
                 + mContext.getResources().getStringArray(R.array.harm_categories)[diagnoseRecord.getHarm()]);
         holder.mInfoView.setText("Sample Text");

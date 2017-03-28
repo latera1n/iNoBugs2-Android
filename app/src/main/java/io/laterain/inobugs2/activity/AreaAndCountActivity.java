@@ -26,19 +26,29 @@ public class AreaAndCountActivity extends AppCompatActivity {
             1_000_000.0
     };
 
+    // TODO: Add UI widgets declarations.
+
+    private boolean mIsEditing;
     private DiagnoseRecord mRecord;
     private int mMethod;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_area_and_count);
-        this.mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
-        this.mMethod = mRecord.getMethod();
 
+        mIsEditing = getIntent().getBooleanExtra(getString(R.string.extra_is_editing), false);
+        mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
+        mMethod = mRecord.getMethod();
         hideViews();
         initSpinners();
         initFloatingActionButton();
+
+        if (mIsEditing) {
+            System.out.println(mRecord.getIdCopy());
+            initEditingModeData();
+        }
     }
 
     private void hideViews() {
@@ -138,6 +148,10 @@ public class AreaAndCountActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void initEditingModeData() {
+        // TODO: Add number processing and set the texts and selected spinner items.
     }
 
 }

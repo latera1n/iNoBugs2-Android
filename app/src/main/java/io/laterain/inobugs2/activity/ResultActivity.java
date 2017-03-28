@@ -166,7 +166,10 @@ public class ResultActivity extends AppCompatActivity {
             fabSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // TODO: Add editing functions.
+                    System.out.println(mRecord.getIdCopy());
+                    startActivity(new Intent(ResultActivity.this, AddRecordActivity.class)
+                            .putExtra(getString(R.string.extra_record_key), mRecord)
+                            .putExtra(getString(R.string.extra_is_editing), true));
                 }
             });
         } else {
