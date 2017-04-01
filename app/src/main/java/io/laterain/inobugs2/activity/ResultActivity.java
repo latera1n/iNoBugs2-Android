@@ -176,6 +176,10 @@ public class ResultActivity extends AppCompatActivity {
             fabSave.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    long id = mRecord.getIdCopy();
+                    if (id > 0) {
+                        mRecord.setId(id);
+                    }
                     if (mRecord.save() > 0) {
                         UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_add_record_success_title, -1, new DialogInterface.OnClickListener() {
                             @Override

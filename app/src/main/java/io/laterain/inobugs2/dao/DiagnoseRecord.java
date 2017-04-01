@@ -329,12 +329,12 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
                 '}';
     }
 
-    public void addAreaInfo(double totalArea, double affectedArea) {
+    public void addOrUpdateAreaInfo(double totalArea, double affectedArea) {
         mTotalArea = totalArea;
         mAffectedArea = affectedArea;
     }
 
-    public void addCropCountInfo(int totalCropCount, int affectedBugCropCount, int affectedEggCropCount) {
+    public void addOrUpdateCropCountInfo(int totalCropCount, int affectedBugCropCount, int affectedEggCropCount) {
         mTotalCropCount = totalCropCount;
         mAffectedBugCropCount = affectedBugCropCount;
         mAffectedEggCropCount = affectedEggCropCount;

@@ -1,5 +1,6 @@
 package io.laterain.inobugs2.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,9 +19,10 @@ public class BugSelectionActivity extends AppCompatActivity {
 
     private final static String STR_EDIT_TEXT_ID_PREFIX = "edit_text_bug_selection_count_age_";
 
-    Spinner mSpinnerBugSelection;
-    EditText mEditTextInvisible;
+    private Spinner mSpinnerBugSelection;
+    private EditText mEditTextInvisible;
 
+    private boolean mIsEditing;
     private DiagnoseRecord mRecord;
     private int mCrop;
     private int mMode;
@@ -29,14 +31,22 @@ public class BugSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bug_selection);
-        this.mSpinnerBugSelection = (Spinner) findViewById(R.id.spinner_bug_selection);
-        this.mEditTextInvisible = (EditText) findViewById(R.id.edit_text_bug_selection_invisible);
-        this.mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
-        this.mCrop = mRecord.getCrop();
-        this.mMode = mRecord.getMode();
+
+        mIsEditing = getIntent().getBooleanExtra(getString(R.string.extra_is_editing), false);
+        mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
+        mCrop = mRecord.getCrop();
+        mMode = mRecord.getMode();
+
+        mSpinnerBugSelection = (Spinner) findViewById(R.id.spinner_bug_selection);
+        mEditTextInvisible = (EditText) findViewById(R.id.edit_text_bug_selection_invisible);
 
         initUIContent();
         initFloatingActionButton();
+
+        if (mIsEditing) {
+            System.out.println(mRecord.getIdCopy());
+            initEditingModeData();
+        }
     }
 
     private void initUIContent() {
@@ -91,6 +101,14 @@ public class BugSelectionActivity extends AppCompatActivity {
                 startActivity(new Intent(getBaseContext(), ResultActivity.class).putExtra(getString(R.string.extra_record_key), mRecord));
             }
         });
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void initEditingModeData() {
+        int[] eggAndBugCountArray = mRecord.getEggAndBugCountArray();
+        for (int i = 0; i < DiagnoseRecord.NUM_INFO_FIELDS - 2; i++) {
+            ((EditText) findViewById(getResources().getIdentifier(STR_EDIT_TEXT_ID_PREFIX + (i + 1), "id", getPackageName()))).setText("" + eggAndBugCountArray[i]);
+        }
     }
 
 }

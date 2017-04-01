@@ -1,5 +1,6 @@
 package io.laterain.inobugs2.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -26,11 +28,24 @@ public class AreaAndCountActivity extends AppCompatActivity {
             1_000_000.0
     };
 
-    // TODO: Add UI widgets declarations.
+    private TextView mTextViewTotalAreaLabel;
+    private TextView mTextViewAffectedAreaLabel;
+    private EditText mEditTextTotalArea;
+    private EditText mEditTextAffectedArea;
+    private Spinner mSpinnerTotalArea;
+    private Spinner mSpinnerAffectedArea;
+
+    private TextView mTextViewTotalCropCountLabel;
+    private TextView mTextViewAffectedBugCropCountLabel;
+    private TextView mTextViewAffectedEggCropCountLabel;
+    private EditText mEditTextTotalCropCount;
+    private EditText mEditTextAffectedBugCropCount;
+    private EditText mEditTextAffectedEggCropCount;
 
     private boolean mIsEditing;
     private DiagnoseRecord mRecord;
     private int mMethod;
+    private int mHarm;
 
 
     @Override
@@ -41,6 +56,22 @@ public class AreaAndCountActivity extends AppCompatActivity {
         mIsEditing = getIntent().getBooleanExtra(getString(R.string.extra_is_editing), false);
         mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
         mMethod = mRecord.getMethod();
+        mHarm = mRecord.getHarm();
+
+        mTextViewTotalAreaLabel = (TextView) findViewById(R.id.text_view_area_and_count_total_area_label);
+        mTextViewAffectedAreaLabel = (TextView) findViewById(R.id.text_view_area_and_count_affected_area_label);
+        mEditTextTotalArea = (EditText) findViewById(R.id.edit_text_area_and_count_total_area);
+        mEditTextAffectedArea = (EditText) findViewById(R.id.edit_text_area_and_count_affected_area);
+        mSpinnerTotalArea = (Spinner) findViewById(R.id.spinner_area_and_count_total_area);
+        mSpinnerAffectedArea = (Spinner) findViewById(R.id.spinner_area_and_count_affected_area);
+
+        mTextViewTotalCropCountLabel = (TextView) findViewById(R.id.text_view_area_and_count_total_crop_count_label);
+        mTextViewAffectedBugCropCountLabel = (TextView) findViewById(R.id.text_view_area_and_count_affected_bug_crop_count_label);
+        mTextViewAffectedEggCropCountLabel = (TextView) findViewById(R.id.text_view_area_and_count_affected_egg_crop_count_label);
+        mEditTextTotalCropCount = (EditText) findViewById(R.id.edit_text_area_and_count_total_crop_count);
+        mEditTextAffectedBugCropCount = (EditText) findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count);
+        mEditTextAffectedEggCropCount = (EditText) findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count);
+
         hideViews();
         initSpinners();
         initFloatingActionButton();
@@ -52,30 +83,34 @@ public class AreaAndCountActivity extends AppCompatActivity {
     }
 
     private void hideViews() {
+        if (mHarm == DiagnoseRecord.Harm.DISEASES.ordinal()) {
+            mTextViewAffectedBugCropCountLabel.setText(getString(R.string.area_and_count_affected_disease_crop_number_label));
+            mTextViewAffectedEggCropCountLabel.setVisibility(View.GONE);
+            mEditTextAffectedEggCropCount.setVisibility(View.GONE);
+        }
         if (mMethod == DiagnoseRecord.Method.BY_AREA.ordinal()) {
-            findViewById(R.id.text_view_area_and_count_total_crop_count_label).setVisibility(View.GONE);
-            findViewById(R.id.text_view_area_and_count_affected_bug_crop_count_label).setVisibility(View.GONE);
-            findViewById(R.id.text_view_area_and_count_affected_egg_crop_count_label).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_total_crop_count).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count).setVisibility(View.GONE);
-        } else if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal()) {
-            findViewById(R.id.text_view_area_and_count_total_area_label).setVisibility(View.GONE);
-            findViewById(R.id.text_view_area_and_count_affected_area_label).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_total_area).setVisibility(View.GONE);
-            findViewById(R.id.edit_text_area_and_count_affected_area).setVisibility(View.GONE);
-            findViewById(R.id.spinner_area_and_count_total_area).setVisibility(View.GONE);
-            findViewById(R.id.spinner_area_and_count_affected_area).setVisibility(View.GONE);
+            mTextViewTotalCropCountLabel.setVisibility(View.GONE);
+            mTextViewAffectedBugCropCountLabel.setVisibility(View.GONE);
+            mTextViewAffectedEggCropCountLabel.setVisibility(View.GONE);
+            mEditTextTotalCropCount.setVisibility(View.GONE);
+            mEditTextAffectedBugCropCount.setVisibility(View.GONE);
+            mEditTextAffectedEggCropCount.setVisibility(View.GONE);
+        }
+        if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal()) {
+            mTextViewTotalAreaLabel.setVisibility(View.GONE);
+            mTextViewAffectedAreaLabel.setVisibility(View.GONE);
+            mEditTextTotalArea.setVisibility(View.GONE);
+            mEditTextAffectedArea.setVisibility(View.GONE);
+            mSpinnerTotalArea.setVisibility(View.GONE);
+            mSpinnerAffectedArea.setVisibility(View.GONE);
         }
     }
 
     private void initSpinners() {
-        Spinner spinnerTotalArea = (Spinner) findViewById(R.id.spinner_area_and_count_total_area);
-        Spinner spinnerAffectedArea = (Spinner) findViewById(R.id.spinner_area_and_count_affected_area);
         List<SpinnerItem> areaSpinnerList = XMLStringArrayHelper.buildSpinnerItemListFromArray(getBaseContext(), R.array.area_units);
 
-        spinnerTotalArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
-        spinnerAffectedArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
+        mSpinnerTotalArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
+        mSpinnerAffectedArea.setAdapter(new ArrayAdapter<>(getBaseContext(), R.layout.spinner_text_view_smaller_text_size, areaSpinnerList));
     }
 
     private void initFloatingActionButton() {
@@ -87,8 +122,8 @@ public class AreaAndCountActivity extends AppCompatActivity {
                     double totalArea = 0.0;
                     double affectedArea = 0.0;
                     try {
-                        totalArea = Double.parseDouble(((EditText) findViewById(R.id.edit_text_area_and_count_total_area)).getText().toString());
-                        affectedArea = Double.parseDouble(((EditText) findViewById(R.id.edit_text_area_and_count_affected_area)).getText().toString());
+                        totalArea = Double.parseDouble(mEditTextTotalArea.getText().toString());
+                        affectedArea = Double.parseDouble(mEditTextAffectedArea.getText().toString());
                     } catch (NumberFormatException e) {
                         Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_area_invalid_format), Toast.LENGTH_SHORT).show();
                     }
@@ -101,8 +136,8 @@ public class AreaAndCountActivity extends AppCompatActivity {
                     int totalAreaUnitIndex = 0;
                     int affectedAreaUnitIndex = 0;
                     try {
-                        totalAreaUnitIndex = Integer.parseInt(((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_total_area)).getSelectedItem()).getId());
-                        affectedAreaUnitIndex = Integer.parseInt(((SpinnerItem) ((Spinner) findViewById(R.id.spinner_area_and_count_affected_area)).getSelectedItem()).getId());
+                        totalAreaUnitIndex = Integer.parseInt(((SpinnerItem) (mSpinnerTotalArea.getSelectedItem())).getId());
+                        affectedAreaUnitIndex = Integer.parseInt(((SpinnerItem) (mSpinnerAffectedArea.getSelectedItem())).getId());
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -111,47 +146,82 @@ public class AreaAndCountActivity extends AppCompatActivity {
                         return;
                     }
 
-                    mRecord.addAreaInfo(totalArea, affectedArea);
+                    mRecord.addOrUpdateAreaInfo(totalArea, affectedArea);
                 }
                 if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
-                    int totalCropCount = 0;
-                    int affectedBugCropCount = 0;
-                    int affectedEggCropCount = 0;
-                    try {
-                        totalCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_total_crop_count)).getText().toString());
-                        affectedBugCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_bug_crop_count)).getText().toString());
-                        affectedEggCropCount = Integer.parseInt(((EditText) findViewById(R.id.edit_text_area_and_count_affected_egg_crop_count)).getText().toString());
-                    } catch (NumberFormatException e) {
-                        Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_invalid_format), Toast.LENGTH_SHORT).show();
+                    int totalCropCount = -1;
+                    int affectedBugCropCount = -1;
+                    int affectedEggCropCount = -1;
+                    if (mHarm == DiagnoseRecord.Harm.DISEASES.ordinal()) {
+                        try {
+                            totalCropCount = Integer.parseInt(mEditTextTotalCropCount.getText().toString());
+                            affectedBugCropCount = Integer.parseInt(mEditTextAffectedBugCropCount.getText().toString());
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_invalid_format), Toast.LENGTH_SHORT).show();
+                        }
+
+                        if (totalCropCount < 1 || affectedBugCropCount < 1) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_greater_than_zero), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        if (totalCropCount < affectedBugCropCount) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_total_greater_than_affected_disease), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    } else {
+                        try {
+                            totalCropCount = Integer.parseInt(mEditTextTotalCropCount.getText().toString());
+                            affectedBugCropCount = Integer.parseInt(mEditTextAffectedBugCropCount.getText().toString());
+                            affectedEggCropCount = Integer.parseInt(mEditTextAffectedEggCropCount.getText().toString());
+                        } catch (NumberFormatException e) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_invalid_format), Toast.LENGTH_SHORT).show();
+                        }
+
+                        if (totalCropCount < 1 || affectedBugCropCount < 1 || affectedEggCropCount < 1) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_greater_than_zero), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        if (totalCropCount < affectedBugCropCount + affectedEggCropCount) {
+                            Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_total_greater_than_affected), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                     }
 
-                    if (totalCropCount < 1 || affectedBugCropCount < 1 || affectedEggCropCount < 1) {
-                        Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_greater_than_zero), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (totalCropCount < affectedBugCropCount + affectedEggCropCount) {
-                        Toast.makeText(AreaAndCountActivity.this, getString(R.string.toast_message_invalid_crop_count_total_greater_than_affected), Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    mRecord.addCropCountInfo(totalCropCount, affectedBugCropCount, affectedEggCropCount);
+                    mRecord.addOrUpdateCropCountInfo(totalCropCount, affectedBugCropCount, affectedEggCropCount);
                 }
 
-                if (mRecord.getHarm() == DiagnoseRecord.Harm.DISEASES.ordinal()) {
-                    startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
-                            .putExtra(getString(R.string.extra_disease_round_key), 0)
-                            .putExtra(getString(R.string.extra_record_key), mRecord));
+                Intent intent;
+                if (mHarm == DiagnoseRecord.Harm.DISEASES.ordinal()) {
+                    intent = new Intent(getBaseContext(), DiseaseSelectionActivity.class);
+                    intent.putExtra(getString(R.string.extra_disease_round_key), 0).putExtra(getString(R.string.extra_record_key), mRecord);
                 } else {
-                    startActivity(new Intent(getBaseContext(), BugSelectionActivity.class)
-                            .putExtra(getString(R.string.extra_record_key), mRecord));
+                    intent = new Intent(getBaseContext(), BugSelectionActivity.class);
+                    intent.putExtra(getString(R.string.extra_record_key), mRecord);
                 }
+                if (mIsEditing) {
+                    intent.putExtra(getString(R.string.extra_is_editing), true);
+                }
+                startActivity(intent);
+
             }
         });
     }
 
+    @SuppressLint("SetTextI18n")
     private void initEditingModeData() {
-        // TODO: Add number processing and set the texts and selected spinner items.
+        if (mMethod == DiagnoseRecord.Method.BY_AREA.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
+            mEditTextTotalArea.setText("" + mRecord.getTotalArea());
+            mEditTextAffectedArea.setText("" + mRecord.getAffectedArea());
+        }
+        if (mMethod == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal() || mMethod == DiagnoseRecord.Method.BOTH.ordinal()) {
+            mEditTextTotalCropCount.setText("" + mRecord.getTotalCropCount());
+            mEditTextAffectedBugCropCount.setText("" + mRecord.getAffectedBugCropCount());
+            if (mHarm == DiagnoseRecord.Harm.BUGS.ordinal()) {
+                mEditTextAffectedEggCropCount.setText("" + mRecord.getAffectedEggCropCount());
+            }
+        }
     }
 
 }

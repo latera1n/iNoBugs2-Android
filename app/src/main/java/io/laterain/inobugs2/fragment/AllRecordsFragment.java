@@ -66,7 +66,6 @@ public class AllRecordsFragment extends Fragment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println(diagnoseRecordList.size());
             if (diagnoseRecordList.size() > 0) {
                 DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
                 recyclerView.addItemDecoration(dividerItemDecoration);
