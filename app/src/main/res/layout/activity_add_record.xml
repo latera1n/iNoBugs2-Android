@@ -213,7 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="病害"
+                    android:text="@string/add_record_harm_radio_label_0"
                     android:textAppearance="@android:style/TextAppearance.Material" />
 
                 <RadioButton
@@ -223,7 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:checked="false"
-                    android:text="虫害"
+                    android:text="@string/add_record_harm_radio_label_1"
                     android:textAppearance="@android:style/TextAppearance.Material" />
             </RadioGroup>
 
@@ -244,7 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="普通模式"
+                    android:text="@string/add_record_mode_radio_label_0"
                     android:textAppearance="@android:style/TextAppearance.Material" />
 
 
@@ -254,7 +254,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:checked="false"
-                    android:text="专家模式"
+                    android:text="@string/add_record_mode_radio_label_1"
                     android:textAppearance="@android:style/TextAppearance.Material" />
             </RadioGroup>
 

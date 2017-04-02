@@ -24,7 +24,9 @@
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/image_view_fragment_all_records"
         android:text="Bugs"
-        android:textAppearance="@android:style/TextAppearance.Material"/>
+        android:textAppearance="@android:style/TextAppearance.Material"
+        android:maxLines="1"
+        android:ellipsize="end"/>
 
     <TextView
         android:id="@+id/text_view_fragment_all_records_info"
@@ -34,5 +36,7 @@
         android:layout_alignEnd="@+id/text_view_fragment_all_records_title_label"
         android:layout_toEndOf="@+id/image_view_fragment_all_records"
         android:text="Sample Text"
-        android:textAppearance="@android:style/TextAppearance.Material.Caption"/>
+        android:textAppearance="@android:style/TextAppearance.Material.Caption"
+        android:maxLines="1"
+        android:ellipsize="end"/>
 </RelativeLayout>

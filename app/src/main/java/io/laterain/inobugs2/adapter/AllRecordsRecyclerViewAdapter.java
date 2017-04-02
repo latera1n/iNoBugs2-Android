@@ -13,17 +13,24 @@ import java.util.List;
 import io.laterain.inobugs2.R;
 import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.fragment.AllRecordsFragment.OnListFragmentInteractionListener;
+import io.laterain.inobugs2.util.DateHelper;
 
 public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecordsRecyclerViewAdapter.RecordViewHolder> {
+
+    private final static String STR_LIST_CELL_INFO_SPLITTER = " - ";
 
     private final Context mContext;
     private final List<DiagnoseRecord> mDiagnoseRecordList;
     private final OnListFragmentInteractionListener mListener;
+    private final String[] mListCellInfoMethodStrList;
+    private final String[] mListCellInfoModeStrList;
 
     public AllRecordsRecyclerViewAdapter(Context context, List<DiagnoseRecord> diagnoseRecordList, OnListFragmentInteractionListener listener) {
         this.mContext = context;
         this.mDiagnoseRecordList = diagnoseRecordList;
         this.mListener = listener;
+        this.mListCellInfoMethodStrList = context.getResources().getStringArray(R.array.method_categories);
+        this.mListCellInfoModeStrList = context.getResources().getStringArray(R.array.mode_categories);
     }
 
     @Override
@@ -43,7 +50,10 @@ public class AllRecordsRecyclerViewAdapter extends RecyclerView.Adapter<AllRecor
         }
         holder.mTitleView.setText(mContext.getResources().getStringArray(R.array.crop_categories)[diagnoseRecord.getCrop()]
                 + mContext.getResources().getStringArray(R.array.harm_categories)[diagnoseRecord.getHarm()]);
-        holder.mInfoView.setText("Sample Text");
+        holder.mInfoView.setText(DateHelper.convertToFormattedDateString(holder.mRecord.getTimeStamp())
+                + STR_LIST_CELL_INFO_SPLITTER + holder.mRecord.getLocation()
+                + STR_LIST_CELL_INFO_SPLITTER + mListCellInfoMethodStrList[holder.mRecord.getMethod()]
+                + STR_LIST_CELL_INFO_SPLITTER + mListCellInfoModeStrList[holder.mRecord.getMode()]);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
