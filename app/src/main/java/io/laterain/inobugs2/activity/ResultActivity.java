@@ -51,8 +51,8 @@ public class ResultActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_result_close) {
-            UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_discard_adding_record_title,
-                    R.string.dialog_universal_discard_adding_record_message, new DialogInterface.OnClickListener() {
+            UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_discard_saving_record_title,
+                    R.string.dialog_universal_discard_saving_record_message, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent intent = new Intent(ResultActivity.this, MainActivity.class);
@@ -181,7 +181,7 @@ public class ResultActivity extends AppCompatActivity {
                         mRecord.setId(id);
                     }
                     if (mRecord.save() > 0) {
-                        UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_add_record_success_title, -1, new DialogInterface.OnClickListener() {
+                        UniversalAlertDialogFragment.newInstance(R.string.dialog_universal_save_record_success_title, -1, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 Intent intent = new Intent(ResultActivity.this, MainActivity.class);

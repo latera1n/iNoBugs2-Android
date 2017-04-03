@@ -93,6 +93,32 @@
     <string name="result_bug_count_result_affected_egg_crop_count_percentage_label">卵株率</string>
     <string name="result_bug_note_title_label">备注</string>
 
+    <!-- Bug result activity -->
+    <string name="result_disease_text_view_default_text">无</string>
+    <string name="result_disease_text_view_default_number_value">0</string>
+    <string name="result_disease_basic_info_title_label">基本信息</string>
+    <string name="result_disease_basic_info_type_label">类型</string>
+    <string name="result_disease_basic_info_date_and_location_label">日期和地点</string>
+    <string name="result_disease_basic_info_method_and_mode_label">统计方法和模式</string>
+    <string name="result_disease_disease_name_title_label">病害名称</string>
+    <string name="result_disease_disease_detail_title_label">症状详情</string>
+    <string name="result_disease_disease_detail_part_1_label">部位 1</string>
+    <string name="result_disease_disease_detail_part_2_label">部位 2</string>
+    <string name="result_disease_disease_detail_part_3_label">部位 3</string>
+    <string name="result_disease_disease_detail_part_4_label">部位 4</string>
+    <string name="result_disease_disease_detail_part_5_label">部位 5</string>
+    <string name="result_disease_disease_detail_part_6_label">部位 6</string>
+    <string name="result_disease_disease_detail_part_7_label">部位 7</string>
+    <string name="result_disease_disease_detail_part_8_label">部位 8</string>
+    <string name="result_disease_count_result_title_label">统计结果</string>
+    <string name="result_disease_count_result_total_area_label">总面积</string>
+    <string name="result_disease_count_result_affected_area_label">受害面积</string>
+    <string name="result_disease_count_result_total_crop_count_label">总株数</string>
+    <string name="result_disease_count_result_affected_disease_crop_count_label">受害株数</string>
+    <string name="result_disease_count_result_affected_area_percentage_label">受害面积率</string>
+    <string name="result_disease_count_result_affected_disease_crop_count_percentage_label">受害株率</string>
+    <string name="result_disease_note_title_label">备注</string>
+
     <!-- About alert dialog fragment -->
     <string name="dialog_about_title">I Didn\'t Change This</string>
     <string name="dialog_about_message">Did you like somebody in 2014 when you were building this app at the first time?</string>
@@ -104,9 +130,9 @@
     <string name="dialog_about_button_3_toast_message">Too lazy to translate. : D</string>
 
     <!-- Universal alert dialog fragment -->
-    <string name="dialog_universal_add_record_success_title">添加记录成功</string>
-    <string name="dialog_universal_discard_adding_record_title">放弃添加记录</string>
-    <string name="dialog_universal_discard_adding_record_message">这条记录将不会被保存</string>
+    <string name="dialog_universal_save_record_success_title">保存记录成功</string>
+    <string name="dialog_universal_discard_saving_record_title">放弃保存记录</string>
+    <string name="dialog_universal_discard_saving_record_message">这条记录将不会被保存</string>
     <string name="dialog_universal_discard_editing_record_title">放弃编辑记录</string>
     <string name="dialog_universal_discard_editing_record_message">所做的更改将不会被保存</string>
     <string name="dialog_universal_delete_title">删除记录</string>
