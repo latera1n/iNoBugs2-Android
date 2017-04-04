@@ -93,15 +93,17 @@
     <string name="result_bug_count_result_affected_egg_crop_count_percentage_label">卵株率</string>
     <string name="result_bug_note_title_label">备注</string>
 
-    <!-- Bug result activity -->
+    <!-- Disease result activity -->
     <string name="result_disease_text_view_default_text">无</string>
     <string name="result_disease_text_view_default_number_value">0</string>
     <string name="result_disease_basic_info_title_label">基本信息</string>
     <string name="result_disease_basic_info_type_label">类型</string>
     <string name="result_disease_basic_info_date_and_location_label">日期和地点</string>
     <string name="result_disease_basic_info_method_and_mode_label">统计方法和模式</string>
+    <string name="result_disease_diagnose_result_title_label">诊断结果</string>
     <string name="result_disease_disease_name_title_label">病害名称</string>
     <string name="result_disease_disease_detail_title_label">症状详情</string>
+    <string name="result_disease_disease_detail_part_0_label">部位 0</string>
     <string name="result_disease_disease_detail_part_1_label">部位 1</string>
     <string name="result_disease_disease_detail_part_2_label">部位 2</string>
     <string name="result_disease_disease_detail_part_3_label">部位 3</string>
@@ -109,7 +111,6 @@
     <string name="result_disease_disease_detail_part_5_label">部位 5</string>
     <string name="result_disease_disease_detail_part_6_label">部位 6</string>
     <string name="result_disease_disease_detail_part_7_label">部位 7</string>
-    <string name="result_disease_disease_detail_part_8_label">部位 8</string>
     <string name="result_disease_count_result_title_label">统计结果</string>
     <string name="result_disease_count_result_total_area_label">总面积</string>
     <string name="result_disease_count_result_affected_area_label">受害面积</string>

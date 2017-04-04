@@ -22,7 +22,7 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
     private int mSelectionRound;
     private DiagnoseRecord mRecord;
     private int mCrop;
-    private int mMethod;
+    private int mMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,14 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
         this.mSelectionRound = getIntent().getIntExtra(getString(R.string.extra_disease_round_key), 0);
         this.mRecord = (DiagnoseRecord) getIntent().getSerializableExtra(getString(R.string.extra_record_key));
         this.mCrop = mRecord.getCrop();
-        this.mMethod = mRecord.getMethod();
+        this.mMode = mRecord.getMode();
 
         initUIContent();
         initFloatingActionButton();
     }
 
     private void initUIContent() {
+        System.out.println(mRecord.getMode());
         mSpinnerCropPartSymptoms = (Spinner) findViewById(R.id.spinner_disease_selection);
         mTextViewCropPartSymptom = (TextView) findViewById(R.id.edit_text_disease_selection);
         TextView textViewCropPartLabel = (TextView) findViewById(R.id.text_view_disease_selection_label);
@@ -45,7 +46,7 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
         DiseaseUIContentHelper helper = DiseaseUIContentHelper.getInstance(this);
         textViewCropPartLabel.setText(helper.getDiseaseSelectionCropPartLabel(mCrop, mSelectionRound));
 
-        if (mMethod == DiagnoseRecord.Mode.NORMAL.ordinal()) {
+        if (mMode == DiagnoseRecord.Mode.NORMAL.ordinal()) {
             mTextViewCropPartSymptom.setVisibility(View.GONE);
             mSpinnerCropPartSymptoms.setAdapter(new ArrayAdapter<>(getBaseContext(),
                     R.layout.spinner_text_view_smaller_text_size,
@@ -66,12 +67,13 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String strContent;
-                if (mMethod == DiagnoseRecord.Mode.NORMAL.ordinal()) {
+                if (mMode == DiagnoseRecord.Mode.NORMAL.ordinal()) {
                     strContent = ((SpinnerItem) mSpinnerCropPartSymptoms.getSelectedItem()).getId();
                 } else {
                     strContent = mTextViewCropPartSymptom.getText().toString();
                 }
                 mRecord.addDiseaseInfoForSelectionRound(mSelectionRound, strContent);
+                // TODO: add a input round for disease name under EXPERT MODE.
                 if (++mSelectionRound < DiseaseUIContentHelper.NUM_PARTS_FOR_CROP[mCrop]) {
                     startActivity(new Intent(getBaseContext(), DiseaseSelectionActivity.class)
                             .putExtra(getString(R.string.extra_disease_round_key), mSelectionRound)

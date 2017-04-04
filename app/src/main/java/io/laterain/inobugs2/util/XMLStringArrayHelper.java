@@ -48,4 +48,14 @@ public class XMLStringArrayHelper {
         return map;
     }
 
+    public static Map<String, String> addMapFromKeysAndValueToMap(Context context, int keysResource, int valuesResource, Map map) {
+        String[] keysArray = context.getResources().getStringArray(keysResource);
+        String[] valuesArray = context.getResources().getStringArray(valuesResource);
+        int length = keysArray.length;
+        for (int i = 0; i < length; i++) {
+            map.put(keysArray[i], valuesArray[i]);
+        }
+        return map;
+    }
+
 }

@@ -100,12 +100,30 @@
                 android:layout_marginBottom="0dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/result_disease_disease_name_title_label"
+                android:text="@string/result_disease_diagnose_result_title_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@android:color/black"/>
 
             <TextView
-                android:id="@+id/text_view_result_disease_disease_name_content"
+                android:id="@+id/text_view_result_disease_diagnose_result_0_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/result_disease_text_view_default_text"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
+            <TextView
+                android:id="@+id/text_view_result_disease_diagnose_result_1_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/result_disease_text_view_default_text"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
+
+            <TextView
+                android:id="@+id/text_view_result_disease_diagnose_result_2_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -122,6 +140,24 @@
                 android:text="@string/result_disease_disease_detail_title_label"
                 android:textAppearance="@android:style/TextAppearance.Material.Medium"
                 android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/text_view_result_disease_disease_detail_part_0_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/result_disease_disease_detail_part_0_label"
+                android:textAppearance="@android:style/TextAppearance.Material.Caption"
+                />
+
+            <TextView
+                android:id="@+id/text_view_result_disease_disease_detail_part_0_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:text="@string/result_disease_text_view_default_text"
+                android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
                 android:id="@+id/text_view_result_disease_disease_detail_part_1_label"
@@ -214,7 +250,7 @@
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
-                android:id="@+id/text_view_result_disease_age_6_label"
+                android:id="@+id/text_view_result_disease_disease_detail_part_6_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -232,7 +268,7 @@
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
-                android:id="@+id/text_view_result_disease_age_7_label"
+                android:id="@+id/text_view_result_disease_disease_detail_part_7_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -243,24 +279,6 @@
 
             <TextView
                 android:id="@+id/text_view_result_disease_disease_detail_part_7_content"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:text="@string/result_disease_text_view_default_text"
-                android:textAppearance="@android:style/TextAppearance.Material"/>
-
-            <TextView
-                android:id="@+id/text_view_result_disease_age_8_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="5dp"
-                android:text="@string/result_disease_disease_detail_part_8_label"
-                android:textAppearance="@android:style/TextAppearance.Material.Caption"
-                />
-
-            <TextView
-                android:id="@+id/text_view_result_disease_disease_detail_part_8_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"

@@ -3,6 +3,7 @@ package io.laterain.inobugs2.util;
 import android.content.Context;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,6 +29,7 @@ public class DiseaseUIContentHelper {
     private static List<String[]> sCropPartLabelsList;
     private static List<List<List<SpinnerItem>>> sDiseaseSpinnerItemsList;
     private static List<Map<String, String>> sDiseaseNamesMapList;
+    private static List<Map<String, String>> sDiseaseSymptomNamesMapList;
 
     /**
      * Required private constructor.
@@ -50,16 +52,23 @@ public class DiseaseUIContentHelper {
             sCropPartLabelsList.add(context.getResources().getStringArray(R.array._3_soybean_parts_names));
 
             sDiseaseSpinnerItemsList = new ArrayList<>();
+            sDiseaseSymptomNamesMapList = new ArrayList<>();
             for (int i = 0; i < NUM_CROPS; i++) {
                 List<List<SpinnerItem>> currentCropDiseaseSpinnerItemsList = new ArrayList<>();
+                Map<String, String> currentCropDiseaseSymptomMap = new HashMap<>();
                 for (int j = 0; j < NUM_PARTS_FOR_CROP[i]; j++) {
                     String idValues = "_" + i + "_" + Constants.XML_STR_CROP_NAMES[i] + "_disease_descriptions_" + j;
                     String idKeys = idValues + "_keys";
                     currentCropDiseaseSpinnerItemsList.add(XMLStringArrayHelper.buildSpinnerItemListFromKeysAndValue(context,
                             context.getResources().getIdentifier(idKeys, "array", context.getPackageName()),
                             context.getResources().getIdentifier(idValues, "array", context.getPackageName())));
+                    currentCropDiseaseSymptomMap = XMLStringArrayHelper.addMapFromKeysAndValueToMap(context,
+                            context.getResources().getIdentifier(idKeys, "array", context.getPackageName()),
+                            context.getResources().getIdentifier(idValues, "array", context.getPackageName()),
+                            currentCropDiseaseSymptomMap);
                 }
                 sDiseaseSpinnerItemsList.add(currentCropDiseaseSpinnerItemsList);
+                sDiseaseSymptomNamesMapList.add(currentCropDiseaseSymptomMap);
             }
 
             sDiseaseNamesMapList = new ArrayList<>();
@@ -74,6 +83,10 @@ public class DiseaseUIContentHelper {
         return sInstance;
     }
 
+    public String[] getDiseaseSelectionCropPartLabelsArray(int crop) {
+        return sCropPartLabelsList.get(crop);
+    }
+
     public String getDiseaseSelectionCropPartLabel(int crop, int selectionRound) {
         return sCropPartLabelsList.get(crop)[selectionRound];
     }
@@ -84,6 +97,10 @@ public class DiseaseUIContentHelper {
 
     public String getDiseaseName(int crop, String diseaseKey) {
         return sDiseaseNamesMapList.get(crop).get(diseaseKey);
+    }
+
+    public String getSymptomDescription(int crop, String symptomKey) {
+        return sDiseaseSymptomNamesMapList.get(crop).get(symptomKey);
     }
 
 }

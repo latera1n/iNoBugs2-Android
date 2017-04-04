@@ -17,11 +17,19 @@ import io.laterain.inobugs2.dao.DiagnoseRecord;
 import io.laterain.inobugs2.fragment.UniversalAlertDialogFragment;
 import io.laterain.inobugs2.util.BugUIContentHelper;
 import io.laterain.inobugs2.util.DateHelper;
+import io.laterain.inobugs2.util.DiseaseUIContentHelper;
 
 public class ResultActivity extends AppCompatActivity {
 
     private final static String STR_TEXT_FIELD_BUG_AGE_X_ID_PREFIX = "text_view_result_bug_count_detail_age_";
     private final static String STR_TEXT_FIELD_BUG_AGE_X_ID_SUFFIX = "_content";
+    private final static String STR_TEXT_FIELD_DISEASE_DIAGNOSE_RESULT_X_ID_PREFIX = "text_view_result_disease_diagnose_result_";
+    private final static String STR_TEXT_FIELD_DISEASE_DIAGNOSE_RESULT_X_ID_SUFFIX = "_content";
+    private final static String STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX = "text_view_result_disease_disease_detail_part_";
+    private final static String STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_LABEL_SUFFIX = "_label";
+    private final static String STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_CONTENT_SUFFIX = "_content";
+
+    private final static String STR_DISEASE_RESULT_PERCENTAGE_SUFFIX = "%";
 
     private DiagnoseRecord mRecord;
 
@@ -84,7 +92,83 @@ public class ResultActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void fillUIContents() {
         if (mRecord.getHarm() == DiagnoseRecord.Harm.DISEASES.ordinal()) {
-            // TODO: Add UI fill-ups for DISEASES.
+            ((TextView) findViewById(R.id.text_view_result_disease_basic_info_type_content)).setText(
+                    getResources().getStringArray(R.array.crop_categories)[mRecord.getCrop()]
+                            + getResources().getStringArray(R.array.harm_categories)[mRecord.getHarm()]
+            );
+            ((TextView) findViewById(R.id.text_view_result_disease_basic_info_date_and_location_content)).setText(
+                    DateHelper.convertToFormattedDateString(mRecord.getTimeStamp()) + " - " + mRecord.getLocation()
+            );
+            ((TextView) findViewById(R.id.text_view_result_disease_basic_info_method_and_mode_content)).setText(
+                    getResources().getStringArray(R.array.method_categories)[mRecord.getMethod()]
+                            + " - " + getResources().getStringArray(R.array.mode_categories)[mRecord.getMode()]
+            );
+            if (mRecord.getMode() == DiagnoseRecord.Mode.NORMAL.ordinal()) {
+                String[] diagnoseResults = mRecord.get3DiagnoseResults();
+                for (int i = 0; i < diagnoseResults.length; i++) {
+                    String textViewId = STR_TEXT_FIELD_DISEASE_DIAGNOSE_RESULT_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DIAGNOSE_RESULT_X_ID_SUFFIX;
+                    if (diagnoseResults[i] != null && diagnoseResults[i].length() > 0) {
+                        String[] resultPartsArray = diagnoseResults[i].split(DiagnoseRecord.STR_RESULT_SEPARATOR);
+                        if (resultPartsArray.length == 2) {
+                            ((TextView) findViewById(getResources().getIdentifier(textViewId, "id", getPackageName())))
+                                    .setText(DiseaseUIContentHelper.getInstance(getBaseContext()).getDiseaseName(mRecord.getCrop(), resultPartsArray[1])
+                                            + DiagnoseRecord.STR_RESULT_SEPARATOR_DISPLAY + resultPartsArray[0] + STR_DISEASE_RESULT_PERCENTAGE_SUFFIX);
+                        }
+                    } else {
+                        if (i > 0) {
+                            findViewById(getResources().getIdentifier(textViewId, "id", getPackageName())).setVisibility(View.GONE);
+                        }
+                    }
+                }
+            } else {
+                ((TextView) findViewById(R.id.text_view_result_disease_diagnose_result_0_content)).setText(mRecord.getResult1());
+                findViewById(R.id.text_view_result_disease_diagnose_result_1_content).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_diagnose_result_2_content).setVisibility(View.GONE);
+            }
+            int numParts = DiseaseUIContentHelper.NUM_PARTS_FOR_CROP[mRecord.getCrop()];
+            for (int i = DiagnoseRecord.NUM_INFO_FIELDS - 1; i >= numParts; i--) {
+                findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_LABEL_SUFFIX, "id", getPackageName())).setVisibility(View.GONE);
+                findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_CONTENT_SUFFIX, "id", getPackageName())).setVisibility(View.GONE);
+            }
+            String[] partLabelsArray = DiseaseUIContentHelper.getInstance(getBaseContext()).getDiseaseSelectionCropPartLabelsArray(mRecord.getCrop());
+            String[] partDiseaseContentArray = mRecord.getPartDiseaseKeysArray();
+            for (int i = 0; i < numParts; i++) {
+                ((TextView) findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_LABEL_SUFFIX, "id", getPackageName()))).setText(partLabelsArray[i]);
+                if (mRecord.getMode() == DiagnoseRecord.Mode.NORMAL.ordinal()) {
+                    ((TextView) findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_CONTENT_SUFFIX, "id", getPackageName())))
+                            .setText(DiseaseUIContentHelper.getInstance(getBaseContext()).getSymptomDescription(mRecord.getCrop(), partDiseaseContentArray[i]));
+                } else {
+                    ((TextView) findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_CONTENT_SUFFIX, "id", getPackageName())))
+                            .setText(partDiseaseContentArray[i]);
+                }
+            }
+            int method = mRecord.getMethod();
+            if (method == DiagnoseRecord.Method.BY_AREA.ordinal()) {
+                findViewById(R.id.text_view_result_disease_count_result_total_crop_count_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_total_crop_count_content).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_content).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_percentage_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_percentage_content).setVisibility(View.GONE);
+            }
+            if (method == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal()) {
+                findViewById(R.id.text_view_result_disease_count_result_total_area_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_total_area_content).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_area_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_area_content).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_area_percentage_label).setVisibility(View.GONE);
+                findViewById(R.id.text_view_result_disease_count_result_affected_area_percentage_content).setVisibility(View.GONE);
+            }
+            if (method == DiagnoseRecord.Method.BY_AREA.ordinal() || method == DiagnoseRecord.Method.BOTH.ordinal()) {
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_total_area_content)).setText(String.format("%.2f", mRecord.getTotalArea()));
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_affected_area_content)).setText(String.format("%.2f", mRecord.getAffectedArea()));
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_affected_area_percentage_content)).setText(String.format("%.2f", (mRecord.getAffectedArea() / mRecord.getTotalArea() * 100.0)) + "%");
+            }
+            if (method == DiagnoseRecord.Method.BY_CROP_COUNT.ordinal() || method == DiagnoseRecord.Method.BOTH.ordinal()) {
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_total_crop_count_content)).setText("" + mRecord.getTotalCropCount());
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_content)).setText("" + mRecord.getAffectedBugCropCount());
+                ((TextView) findViewById(R.id.text_view_result_disease_count_result_affected_disease_crop_count_percentage_content)).setText(String.format("%.2f", (mRecord.getAffectedBugCropCount() * 100.0 / mRecord.getTotalCropCount())) + "%");
+            }
         } else {
             ((TextView) findViewById(R.id.text_view_result_bug_basic_info_type_content)).setText(
                     getResources().getStringArray(R.array.crop_categories)[mRecord.getCrop()]
@@ -147,10 +231,10 @@ public class ResultActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.text_view_result_bug_count_result_affected_bug_crop_count_percentage_content)).setText(String.format("%.2f", (mRecord.getAffectedBugCropCount() * 100.0 / mRecord.getTotalCropCount())) + "%");
                 ((TextView) findViewById(R.id.text_view_result_bug_count_result_affected_egg_crop_count_percentage_content)).setText(String.format("%.2f", (mRecord.getAffectedEggCropCount() * 100.0 / mRecord.getTotalCropCount())) + "%");
             }
-            String recordNote = mRecord.getNote();
-            if (recordNote.length() > 0) {
-                ((TextView) findViewById(R.id.text_view_result_bug_note_content)).setText(recordNote);
-            }
+        }
+        String recordNote = mRecord.getNote();
+        if (recordNote.length() > 0) {
+            ((TextView) findViewById(R.id.text_view_result_bug_note_content)).setText(recordNote);
         }
     }
 
