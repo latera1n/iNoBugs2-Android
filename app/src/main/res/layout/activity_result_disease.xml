@@ -94,7 +94,7 @@
                 android:textAppearance="@android:style/TextAppearance.Material"/>
 
             <TextView
-                android:id="@+id/text_view_result_disease_disease_name_title_label"
+                android:id="@+id/text_view_result_disease_diagnose_result_title_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"

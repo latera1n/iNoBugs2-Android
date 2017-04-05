@@ -121,6 +121,7 @@ public class ResultActivity extends AppCompatActivity {
                     }
                 }
             } else {
+                ((TextView) findViewById(R.id.text_view_result_disease_diagnose_result_title_label)).setText(getString(R.string.result_disease_disease_name_title_label));
                 ((TextView) findViewById(R.id.text_view_result_disease_diagnose_result_0_content)).setText(mRecord.getResult1());
                 findViewById(R.id.text_view_result_disease_diagnose_result_1_content).setVisibility(View.GONE);
                 findViewById(R.id.text_view_result_disease_diagnose_result_2_content).setVisibility(View.GONE);
@@ -131,7 +132,7 @@ public class ResultActivity extends AppCompatActivity {
                 findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_CONTENT_SUFFIX, "id", getPackageName())).setVisibility(View.GONE);
             }
             String[] partLabelsArray = DiseaseUIContentHelper.getInstance(getBaseContext()).getDiseaseSelectionCropPartLabelsArray(mRecord.getCrop());
-            String[] partDiseaseContentArray = mRecord.getPartDiseaseKeysArray();
+            String[] partDiseaseContentArray = mRecord.getPartSymptomKeysArray();
             for (int i = 0; i < numParts; i++) {
                 ((TextView) findViewById(getResources().getIdentifier(STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_PREFIX + i + STR_TEXT_FIELD_DISEASE_DETAIL_PART_X_ID_LABEL_SUFFIX, "id", getPackageName()))).setText(partLabelsArray[i]);
                 if (mRecord.getMode() == DiagnoseRecord.Mode.NORMAL.ordinal()) {

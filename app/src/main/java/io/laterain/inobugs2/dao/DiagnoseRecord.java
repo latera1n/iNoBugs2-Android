@@ -536,7 +536,7 @@ public class DiagnoseRecord extends SugarRecord implements Serializable {
         return new String[]{mResult1, mResult2, mResult3};
     }
 
-    public String[] getPartDiseaseKeysArray() {
+    public String[] getPartSymptomKeysArray() {
         return new String[]{
                 mInfo0,
                 mInfo1,

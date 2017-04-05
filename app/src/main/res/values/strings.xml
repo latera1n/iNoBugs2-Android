@@ -8,6 +8,7 @@
 
     <string name="extra_record_key">mRecord</string>
     <string name="extra_disease_round_key">diseaseRound</string>
+    <string name="extra_disease_expert_mode_final_round">expertModeFinalRound</string>
     <string name="extra_should_show_edit_fab_button">extraShouldShowEditButton</string>
     <string name="extra_should_show_delete_record_button">extraShouldShowDeleteRecordButton</string>
     <string name="extra_is_editing">extraIsEditing</string>
@@ -111,6 +112,7 @@
     <string name="result_disease_disease_detail_part_5_label">部位 5</string>
     <string name="result_disease_disease_detail_part_6_label">部位 6</string>
     <string name="result_disease_disease_detail_part_7_label">部位 7</string>
+    <string name="result_disease_disease_expert_mode_final_round_disease_name_label">病害名称</string>
     <string name="result_disease_count_result_title_label">统计结果</string>
     <string name="result_disease_count_result_total_area_label">总面积</string>
     <string name="result_disease_count_result_affected_area_label">受害面积</string>
@@ -144,10 +146,10 @@
     <string name="toast_message_invalid_date">日期格式有误</string>
     <string name="toast_message_incomplete_input">信息填写不完整</string>
     <string name="toast_message_invalid_area_invalid_format">面积格式有误</string>
-    <string name="toast_message_invalid_area_greater_than_zero">面积应不能小于 1</string>
+    <string name="toast_message_invalid_area_greater_than_zero">面积应大于 0</string>
     <string name="toast_message_invalid_area_total_greater_than_affected">总面积不能小于受害面积</string>
     <string name="toast_message_invalid_crop_count_invalid_format">株数格式有误</string>
-    <string name="toast_message_invalid_crop_count_greater_than_zero">株数不能小于 1</string>
+    <string name="toast_message_invalid_crop_count_greater_than_zero">株数应大于 0</string>
     <string name="toast_message_invalid_crop_count_total_greater_than_affected">总株数不能小于受害株数总和</string>
     <string name="toast_message_invalid_crop_count_total_greater_than_affected_disease">总株数不能小于受害株数</string>
     <string name="toast_message_invalid_bug_or_egg_count_invalid_format">害虫成虫或虫卵数格式有误</string>

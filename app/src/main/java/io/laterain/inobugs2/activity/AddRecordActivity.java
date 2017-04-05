@@ -103,7 +103,6 @@ public class AddRecordActivity extends AppCompatActivity {
 
                 if (crop >= 0 && crop <= 3 && method >= 0 && method <= 2 && timestamp > 0 && location.length() > 0) {
                     if (mIsEditing) {
-                        // TODO: add an extra field to let the following pages know if the CROP is changed.
                         mRecord.updateBasicInfo(crop, harm, mode, method, timestamp, location, note);
                         startActivity(new Intent(getBaseContext(), AreaAndCountActivity.class)
                                 .putExtra(getString(R.string.extra_record_key), mRecord)
@@ -136,6 +135,12 @@ public class AddRecordActivity extends AppCompatActivity {
             mEditTextTime.setText(DateHelper.convertToFormattedDateString(mRecord.getTimeStamp()));
             mEditTextLocation.setText(mRecord.getLocation());
             mEditTextNote.setText(mRecord.getNote());
+
+            mSpinnerCrop.setEnabled(false);
+            mRadioButtonHarmDisease.setEnabled(false);
+            radioButtonHarmBug.setEnabled(false);
+            mRadioButtonModeNormal.setEnabled(false);
+            radioButtonModeExpert.setEnabled(false);
         }
     }
 
