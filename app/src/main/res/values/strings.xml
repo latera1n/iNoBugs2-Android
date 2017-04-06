@@ -18,6 +18,10 @@
     <string name="action_result_close">关闭</string>
     <string name="action_result_delete">删除</string>
 
+    <!-- Main fragment -->
+    <string name="fragment_main_record_label">条记录</string>
+    <string name="fragment_main_click_to_add_record_label">点击 + 添加第一条记录</string>
+
     <!-- All records list fragment-->
     <string name="fragment_all_records_list_empty_label">无记录</string>
 
@@ -155,5 +159,10 @@
     <string name="toast_message_invalid_bug_or_egg_count_invalid_format">害虫成虫或虫卵数格式有误</string>
     <string name="toast_message_deleting_record_success">删除数据成功</string>
     <string name="toast_message_deleting_record_error">删除数据错误</string>
+
+    <!-- SQL database inquiries-->
+    <string name="sql_select_all_diagnose_records">SELECT * FROM DIAGNOSE_RECORD</string>
+    <string name="sql_count_disease_diagnose_records_where_clause">M_HARM = 0</string>
+    <string name="sql_count_bug_diagnose_records_where_clause">M_HARM = 1</string>
 
 </resources>

@@ -139,7 +139,7 @@ public class DiseaseSelectionActivity extends AppCompatActivity {
                     position++;
                 }
             } else {
-                    mEditTextCropPartSymptom.setText(symptomIdOrDescriptionStr);
+                mEditTextCropPartSymptom.setText(symptomIdOrDescriptionStr);
             }
         }
     }

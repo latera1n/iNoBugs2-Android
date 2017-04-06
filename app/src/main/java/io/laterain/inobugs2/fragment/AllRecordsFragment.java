@@ -62,7 +62,7 @@ public class AllRecordsFragment extends Fragment {
             }
             List<DiagnoseRecord> diagnoseRecordList = new ArrayList<>();
             try {
-                diagnoseRecordList = DiagnoseRecord.findWithQuery(DiagnoseRecord.class, "SELECT * FROM DIAGNOSE_RECORD");
+                diagnoseRecordList = DiagnoseRecord.findWithQuery(DiagnoseRecord.class, getString(R.string.sql_select_all_diagnose_records));
             } catch (Exception e) {
                 e.printStackTrace();
             }

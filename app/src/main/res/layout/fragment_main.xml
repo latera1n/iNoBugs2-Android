@@ -1,28 +1,153 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="0dp">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
+                android:paddingTop="0dp">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/text_view_view_fragment_main_total_number_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="right"
+                    android:text="7"
+                    android:textColor="#2c6548"
+                    android:textSize="54sp"
+                    android:textStyle="italic"
+                    android:fontFamily="sans-serif-light"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.618">
+
+                <TextView
+                    android:id="@+id/text_view_view_fragment_main_record_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/fragment_main_record_label"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#2c6548"
+                    android:textSize="18sp"
+                    android:textAllCaps="false"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="normal|bold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="0.75"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/text_view_fragment_main_click_to_add_record_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="@string/fragment_main_click_to_add_record_label"
+                android:textAppearance="@android:style/TextAppearance.Material.Small"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:id="@+id/linear_layout_fragment_main_count_view">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_main_virus_16dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/image_view_fragment_main_virus_icon"
+                        android:layout_marginTop="1dp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@mipmap/ic_main_ladybug_16dp"
+                        android:layout_below="@+id/image_view_fragment_main_virus_icon"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/image_view_fragment_main_bug_icon"/>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.618">
+
+                    <TextView
+                        android:text="x 6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/text_view_fragment_main_disease_count"
+                        android:layout_marginStart="7dp"
+                        android:textAppearance="@android:style/TextAppearance.Material.Small"/>
+
+                    <TextView
+                        android:text="x 1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/text_view_fragment_main_bug_count"
+                        android:layout_marginStart="7dp"
+                        android:layout_marginTop="7dp"
+                        android:textAppearance="@android:style/TextAppearance.Material.Small"/>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floating_button_main_new_record"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        app:fabSize="mini"
-        android:id="@+id/floating_button_main_new_record"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:src="@mipmap/ic_add_white_24dp"/>
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:src="@mipmap/ic_add_white_24dp"
+        app:fabSize="mini"/>
 
 </RelativeLayout>
