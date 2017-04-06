@@ -1,11 +1,13 @@
 <resources>
+    <!-- Meta -->
     <string name="app_name">iNoBugs 2</string>
     <string name="app_name_display">病虫随手记</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
+    <!-- Tab names-->
     <string name="page_home">主 页</string>
     <string name="page_all_records">所有记录</string>
 
+    <!-- Extra keys -->
     <string name="extra_record_key">mRecord</string>
     <string name="extra_disease_round_key">diseaseRound</string>
     <string name="extra_disease_expert_mode_final_round">expertModeFinalRound</string>
@@ -64,7 +66,7 @@
 
     <!-- About activity-->
     <string name="about_version">2.0</string>
-    <string name="about_build">20170217</string>
+    <string name="about_build">20170406</string>
     <string name="about_author">代码/UI: Ryan</string>
     <string name="about_special_thanks">特别鸣谢: Louz</string>
     <string name="about_copyright">© 2017 laterain.io</string>
